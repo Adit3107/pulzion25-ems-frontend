@@ -17,7 +17,7 @@ export default function Sponsors() {
       <div className="container">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-5xl font-headline font-bold">Our Sponsors</h2>
-          <p className="text-muted-foreground">
+          <p className="text-foreground/80">
             We are proud to be supported by these innovative companies.
           </p>
         </div>

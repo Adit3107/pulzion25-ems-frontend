@@ -35,7 +35,7 @@ export default function Faq() {
       <div className="container max-w-3xl mx-auto">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-5xl font-headline font-bold">Frequently Asked Questions</h2>
-          <p className="text-muted-foreground">
+          <p className="text-foreground/80">
             Find answers to common questions about our events and platform.
           </p>
         </div>
@@ -43,7 +43,7 @@ export default function Faq() {
           {faqs.map((faq, index) => (
             <AccordionItem key={index} value={`item-${index}`} className="border-primary/20">
               <AccordionTrigger className="font-headline text-lg hover:no-underline text-left">{faq.question}</AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">
+              <AccordionContent className="text-foreground/80">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

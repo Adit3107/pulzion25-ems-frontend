@@ -36,7 +36,7 @@ export default function Events() {
       <div className="container">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-5xl font-headline font-bold">Upcoming Events</h2>
-          <p className="max-w-2xl mx-auto text-muted-foreground">
+          <p className="max-w-2xl mx-auto text-foreground/80">
             Explore our curated list of events.
           </p>
         </div>
@@ -55,10 +55,10 @@ export default function Events() {
                   />
                 </div>
                 <CardTitle className="pt-4 font-headline">{event.title}</CardTitle>
-                <div className="text-sm text-muted-foreground">{event.date}</div>
+                <div className="text-sm text-foreground/80">{event.date}</div>
               </CardHeader>
               <CardContent className="flex-grow">
-                <p className="text-muted-foreground">{event.description}</p>
+                <p className="text-foreground/80">{event.description}</p>
                 <div className="flex flex-wrap gap-2 mt-4">
                   {event.tags.map(tag => <Badge key={tag} variant="secondary">{tag}</Badge>)}
                 </div>

@@ -34,7 +34,7 @@ export default function About() {
             {stats.map((stat) => (
                 <div key={stat.label} className="bg-card/50 border border-primary/20 rounded-lg p-6 backdrop-blur-sm">
                     <h3 className="text-5xl font-bold text-primary">{stat.value}</h3>
-                    <p className="text-muted-foreground mt-2">{stat.label}</p>
+                    <p className="text-foreground/80 mt-2">{stat.label}</p>
                 </div>
             ))}
         </div>
@@ -51,7 +51,7 @@ export default function About() {
                         <CardTitle className="font-headline text-2xl text-center group-hover:text-primary transition-colors">{org.title}</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className="text-muted-foreground text-center">{org.description}</p>
+                        <p className="text-foreground/80 text-center">{org.description}</p>
                     </CardContent>
                     <div className="absolute bottom-0 left-0 w-full h-1 bg-primary/50 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-center" />
                 </Card>

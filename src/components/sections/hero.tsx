@@ -18,7 +18,7 @@ export default function Hero() {
           <h1 className="text-6xl md:text-8xl font-headline font-bold tracking-tighter bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             PULZION'25
           </h1>
-          <h2 className="text-2xl md:text-3xl font-headline font-bold text-muted-foreground">
+          <h2 className="text-2xl md:text-3xl font-headline font-bold text-foreground/80">
             -The Ai Gridlock-
           </h2>
         </motion.div>
