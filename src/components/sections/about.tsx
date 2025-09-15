@@ -1,10 +1,11 @@
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Counter } from '@/components/ui/counter';
 
 const stats = [
   { value: '13', label: 'Events' },
   { value: '300', label: 'Volunteers' },
-  { value: '8,000', label: 'Footfall' },
+  { value: '8000', label: 'Footfall' },
 ];
 
 const organizations = [
@@ -33,7 +34,10 @@ export default function About() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center">
             {stats.map((stat) => (
                 <div key={stat.label} className="bg-card/50 border border-primary/20 rounded-lg p-6 backdrop-blur-sm">
-                    <h3 className="text-5xl font-bold text-primary">{stat.value}</h3>
+                    <h3 className="text-5xl font-bold text-primary">
+                      <Counter value={parseInt(stat.value)} />
+                      {stat.label === 'Footfall' ? '+' : ''}
+                    </h3>
                     <p className="text-foreground/80 mt-2">{stat.label}</p>
                 </div>
             ))}
