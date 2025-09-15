@@ -8,12 +8,12 @@ import { SplineRobot } from '@/components/ui/spline-robot';
 export default function Hero() {
   return (
     <AnimatedSection id="home" className="container grid lg:grid-cols-2 gap-10 items-center py-20 md:py-32 min-h-[calc(100vh_-_56px)]">
-      <div className="space-y-6 text-center lg:text-left z-10">
+      <div className="space-y-6 text-center z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-center lg:items-start"
+          className="flex flex-col items-center"
         >
           <h1 className="text-6xl md:text-8xl font-headline font-bold tracking-tighter bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
             PULZION'25
@@ -26,6 +26,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
+          className="flex justify-center"
           >
           <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--accent))] to-[hsl(var(--accent-secondary))] text-accent-foreground font-bold hover:opacity-90 transition-opacity">
             Register for Event
