@@ -1,3 +1,58 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "event1",
+      "description": "An AI conference in a futuristic setting.",
+      "imageUrl": "https://picsum.photos/seed/event1/600/400",
+      "imageHint": "conference futuristic"
+    },
+    {
+      "id": "event2",
+      "description": "A workshop on machine learning.",
+      "imageUrl": "https://picsum.photos/seed/event2/600/400",
+      "imageHint": "workshop technology"
+    },
+    {
+      "id": "event3",
+      "description": "A hackathon for AI developers.",
+      "imageUrl": "https://picsum.photos/seed/event3/600/400",
+      "imageHint": "hackathon code"
+    },
+    {
+      "id": "sponsor1",
+      "description": "Logo for sponsor 1.",
+      "imageUrl": "https://picsum.photos/seed/sponsor1/200/100",
+      "imageHint": "logo tech"
+    },
+    {
+      "id": "sponsor2",
+      "description": "Logo for sponsor 2.",
+      "imageUrl": "https://picsum.photos/seed/sponsor2/200/100",
+      "imageHint": "logo company"
+    },
+    {
+      "id": "sponsor3",
+      "description": "Logo for sponsor 3.",
+      "imageUrl": "https://picsum.photos/seed/sponsor3/200/100",
+      "imageHint": "logo brand"
+    },
+    {
+      "id": "sponsor4",
+      "description": "Logo for sponsor 4.",
+      "imageUrl": "https://picsum.photos/seed/sponsor4/200/100",
+      "imageHint": "logo business"
+    },
+    {
+      "id": "sponsor5",
+      "description": "Logo for sponsor 5.",
+      "imageUrl": "https://picsum.photos/seed/sponsor5/200/100",
+      "imageHint": "logo design"
+    },
+    {
+      "id": "sponsor6",
+      "description": "Logo for sponsor 6.",
+      "imageUrl": "https://picsum.photos/seed/sponsor6/200/100",
+      "imageHint": "logo abstract"
+    }
+  ]
 }
