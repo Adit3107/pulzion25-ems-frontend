@@ -27,7 +27,7 @@ export default function About() {
     <AnimatedSection id="about" className="py-20 md:py-32">
       <div className="container">
         <div className="text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-5xl font-headline font-bold">About Pulzion</h2>
+            <h2 className="text-3xl md:text-5xl font-headline font-bold">About Us</h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center">
@@ -39,7 +39,7 @@ export default function About() {
             ))}
         </div>
         
-        <div className="max-w-4xl mx-auto text-center text-lg text-muted-foreground mb-20 space-y-4">
+        <div className="max-w-4xl mx-auto text-center text-lg text-foreground/90 mb-20 space-y-4">
             <p>Pulzion is the annual flagship event organized by PICT ACM Student Chapter (PASC). Pulzion consists of multiple events in technical as well as non-technical domains includes coding competitions, mock placement interviews, business management-based events, design and development-based contests, and quizzing events.</p>
             <p>It is one of the most anticipated events taking place at PICT. This year, Pulzion is going global to encourage students of varied backgrounds to participate and compete. With sincerity, dedication, and high aspirations, our chapter hopes to add value to our college and the community.</p>
         </div>
