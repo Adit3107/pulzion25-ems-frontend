@@ -3,20 +3,12 @@
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { motion } from 'framer-motion';
-import { AIRoboBody } from '@/components/ui/ai-robo-body';
-import { GridlockModel } from '@/components/ui/gridlock-model';
+import { SplineRobot } from '@/components/ui/spline-robot';
 
 export default function Hero() {
   return (
-    <AnimatedSection id="home" className="container grid lg:grid-cols-2 gap-10 items-center py-20 md:py-32 relative">
-       <div className="absolute top-0 right-0 -z-10 w-1/2 h-full opacity-30">
-        <AIRoboBody />
-      </div>
-      <div className="absolute bottom-0 left-0 -z-10 w-1/2 h-1/2 opacity-50">
-        <GridlockModel />
-      </div>
-
-      <div className="space-y-6 text-center lg:text-left">
+    <AnimatedSection id="home" className="container grid lg:grid-cols-2 gap-10 items-center py-20 md:py-32 min-h-screen">
+      <div className="space-y-6 text-center lg:text-left z-10">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -44,8 +36,8 @@ export default function Hero() {
           </Button>
         </motion.div>
       </div>
-      <div className="relative w-full h-96 lg:h-[500px]">
-        {/* This div is now a placeholder for spacing, 3D models are in the background */}
+      <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full z-0">
+        <SplineRobot />
       </div>
     </AnimatedSection>
   );
