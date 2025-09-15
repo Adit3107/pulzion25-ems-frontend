@@ -3,7 +3,6 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { PlaceHolderImages, type ImagePlaceholder } from '@/lib/placeholder-images';
 import { AnimatedSection } from '@/components/ui/animated-section';
-import { AIGenerator } from '@/components/ai-generator';
 import { Badge } from '@/components/ui/badge';
 
 const events = [
@@ -38,9 +37,8 @@ export default function Events() {
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-5xl font-headline font-bold">Upcoming Events</h2>
           <p className="max-w-2xl mx-auto text-muted-foreground">
-            Explore our curated list of events. Don't forget to use our AI tool to generate catchy descriptions for your own events!
+            Explore our curated list of events.
           </p>
-          <AIGenerator />
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
