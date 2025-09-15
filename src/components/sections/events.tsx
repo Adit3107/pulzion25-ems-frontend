@@ -32,7 +32,7 @@ const events = [
 
 export default function Events() {
   return (
-    <AnimatedSection id="events" className="py-20 md:py-32 bg-card">
+    <AnimatedSection id="events" className="py-20 md:py-32">
       <div className="container">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-5xl font-headline font-bold">Upcoming Events</h2>
@@ -43,7 +43,7 @@ export default function Events() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {events.map((event, index) => (
-            <Card key={index} className="flex flex-col bg-background/50 border-primary/20 hover:border-primary/50 transition-all duration-300 transform hover:scale-105">
+            <Card key={index} className="flex flex-col bg-card/50 border-primary/20 hover:border-primary/50 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm">
               <CardHeader>
                 <div className="relative h-48 w-full">
                   <Image

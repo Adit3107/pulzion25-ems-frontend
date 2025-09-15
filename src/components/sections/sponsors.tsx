@@ -13,7 +13,7 @@ const sponsors = [
 
 export default function Sponsors() {
   return (
-    <AnimatedSection id="sponsors" className="py-20 md:py-32 bg-card">
+    <AnimatedSection id="sponsors" className="py-20 md:py-32">
       <div className="container">
         <div className="text-center space-y-4 mb-12">
           <h2 className="text-3xl md:text-5xl font-headline font-bold">Our Sponsors</h2>
