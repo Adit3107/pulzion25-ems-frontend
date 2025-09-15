@@ -7,15 +7,21 @@ import { SplineRobot } from '@/components/ui/spline-robot';
 
 export default function Hero() {
   return (
-    <AnimatedSection id="home" className="container grid lg:grid-cols-2 gap-10 items-center py-20 md:py-32 min-h-screen">
+    <AnimatedSection id="home" className="container grid lg:grid-cols-2 gap-10 items-center py-20 md:py-32 min-h-[calc(100vh_-_56px)]">
       <div className="space-y-6 text-center lg:text-left z-10">
-        <motion.h1 
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-4xl md:text-6xl font-headline font-bold tracking-tighter bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-          AI GridLock Portal
-        </motion.h1>
+          className="flex flex-col items-center lg:items-start"
+        >
+          <h1 className="text-6xl md:text-8xl font-headline font-bold tracking-tighter bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            PULZION'25
+          </h1>
+          <h2 className="text-2xl md:text-3xl font-headline font-bold text-muted-foreground">
+            -The Ai Gridlock-
+          </h2>
+        </motion.div>
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -36,7 +42,7 @@ export default function Hero() {
           </Button>
         </motion.div>
       </div>
-      <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full z-0">
+      <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full lg:h-[calc(100%_-_56px)] mt-14 z-0">
         <SplineRobot />
       </div>
     </AnimatedSection>
