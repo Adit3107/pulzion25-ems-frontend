@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-export function Interactive3D() {
+export function GridlockModel() {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -15,44 +15,36 @@ export function Interactive3D() {
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
     currentMount.appendChild(renderer.domElement);
-    
-    const geometry = new THREE.IcosahedronGeometry(1.5, 0);
-    const material = new THREE.MeshStandardMaterial({
-      color: 0x8A2BE2, // Electric Purple
-      metalness: 0.5,
-      roughness: 0.3,
+
+    const geometry = new THREE.BoxGeometry(2, 2, 2);
+    const material = new THREE.MeshBasicMaterial({
+      color: 0x271056, // Deep Blue-Purple
       wireframe: true,
     });
     const cube = new THREE.Mesh(geometry, material);
     scene.add(cube);
+    
+    const edges = new THREE.EdgesGeometry(geometry);
+    const lineMaterial = new THREE.LineBasicMaterial({ color: 0x8A2BE2 }); // Electric Purple
+    const wireframe = new THREE.LineSegments(edges, lineMaterial);
+    cube.add(wireframe);
 
-    camera.position.z = 4;
-    
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-    scene.add(ambientLight);
-    
-    const pointLight = new THREE.PointLight(0x00FFFF, 1, 100); // Cyan
-    pointLight.position.set(5, 5, 5);
-    scene.add(pointLight);
+    camera.position.z = 3;
 
-    const pointLight2 = new THREE.PointLight(0x00FF00, 1, 100); // Green
-    pointLight2.position.set(-5, -5, -5);
-    scene.add(pointLight2);
-    
     const handleResize = () => {
-        if (currentMount) {
-            camera.aspect = currentMount.clientWidth / currentMount.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
-        }
+      if (currentMount) {
+        camera.aspect = currentMount.clientWidth / currentMount.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
+      }
     };
 
     window.addEventListener('resize', handleResize);
 
     const animate = () => {
       requestAnimationFrame(animate);
-      cube.rotation.x += 0.005;
-      cube.rotation.y += 0.005;
+      cube.rotation.x += 0.002;
+      cube.rotation.y += 0.003;
       renderer.render(scene, camera);
     };
 

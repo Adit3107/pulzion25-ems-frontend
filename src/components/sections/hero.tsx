@@ -2,12 +2,20 @@
 
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/ui/animated-section';
-import { Interactive3D } from '@/components/ui/interactive-3d';
 import { motion } from 'framer-motion';
+import { AIRoboBody } from '@/components/ui/ai-robo-body';
+import { GridlockModel } from '@/components/ui/gridlock-model';
 
 export default function Hero() {
   return (
-    <AnimatedSection id="home" className="container grid lg:grid-cols-2 gap-10 items-center py-20 md:py-32">
+    <AnimatedSection id="home" className="container grid lg:grid-cols-2 gap-10 items-center py-20 md:py-32 relative">
+       <div className="absolute top-0 right-0 -z-10 w-1/2 h-full opacity-30">
+        <AIRoboBody />
+      </div>
+      <div className="absolute bottom-0 left-0 -z-10 w-1/2 h-1/2 opacity-50">
+        <GridlockModel />
+      </div>
+
       <div className="space-y-6 text-center lg:text-left">
         <motion.h1 
           initial={{ opacity: 0, y: 20 }}
@@ -37,7 +45,7 @@ export default function Hero() {
         </motion.div>
       </div>
       <div className="relative w-full h-96 lg:h-[500px]">
-        <Interactive3D />
+        {/* This div is now a placeholder for spacing, 3D models are in the background */}
       </div>
     </AnimatedSection>
   );
