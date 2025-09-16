@@ -1,10 +1,16 @@
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { WireframeCube } from '@/components/ui/wireframe-cube';
 import { NetworkBackground } from '@/components/ui/network-background';
+import { Skeleton } from '@/components/ui/skeleton';
+
+const WireframeCube = dynamic(() => import('@/components/ui/wireframe-cube').then(mod => mod.WireframeCube), {
+  ssr: false,
+  loading: () => <Skeleton className="w-full h-full aspect-square" />,
+});
 
 export default function RegisterPage() {
   return (
