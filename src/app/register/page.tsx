@@ -1,18 +1,11 @@
 "use client";
 
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { NetworkBackground } from '@/components/ui/network-background';
-import { Skeleton } from '@/components/ui/skeleton';
-
-const WireframeCube = dynamic(() => import('@/components/ui/wireframe-cube').then(mod => mod.WireframeCube), {
-  ssr: false,
-  loading: () => <Skeleton className="w-full h-full" />,
-});
 
 export default function RegisterPage() {
   return (
@@ -60,12 +53,6 @@ export default function RegisterPage() {
             </div>
           </CardContent>
         </Card>
-      </div>
-
-      <div className="absolute top-0 left-0 w-1/2 h-full z-0 hidden lg:flex items-center justify-center">
-        <div className="w-full h-full max-w-lg max-h-lg -translate-x-1/4">
-          <WireframeCube />
-        </div>
       </div>
     </div>
   );
