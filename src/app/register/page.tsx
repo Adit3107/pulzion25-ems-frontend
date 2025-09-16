@@ -11,23 +11,21 @@ import { Skeleton } from '@/components/ui/skeleton';
 
 const WireframeCube = dynamic(() => import('@/components/ui/wireframe-cube').then(mod => mod.WireframeCube), {
   ssr: false,
-  loading: () => <Skeleton className="w-full h-full aspect-square" />,
+  loading: () => <Skeleton className="w-full h-full" />,
 });
 
 export default function RegisterPage() {
   return (
-    <div className="relative flex min-h-screen w-full flex-col items-center justify-center bg-background p-4">
+    <div className="relative flex min-h-screen w-full flex-col items-center justify-center bg-background p-4 overflow-hidden">
       <NetworkBackground />
-      <div className="absolute top-4 left-4">
+      <div className="absolute top-4 left-4 z-20">
         <Button asChild variant="outline">
           <Link href="/">Back to Home</Link>
         </Button>
       </div>
-      <div className="flex w-full max-w-4xl items-center justify-center">
-        <div className="relative hidden w-1/2 -translate-x-10 lg:block">
-           <WireframeCube />
-        </div>
-        <Card className="z-10 w-full max-w-md bg-card/70 backdrop-blur-lg">
+      
+      <div className="z-10 w-full max-w-md">
+        <Card className="bg-card/70 backdrop-blur-lg">
           <CardHeader className="text-center">
             <CardTitle className="font-headline text-3xl">Create an Account</CardTitle>
             <CardDescription>Join the AI Gridlock and get your ticket.</CardDescription>
@@ -62,6 +60,12 @@ export default function RegisterPage() {
             </div>
           </CardContent>
         </Card>
+      </div>
+
+      <div className="absolute top-0 left-0 w-1/2 h-full z-0 hidden lg:flex items-center justify-center">
+        <div className="w-full h-full max-w-lg max-h-lg -translate-x-1/4">
+          <WireframeCube />
+        </div>
       </div>
     </div>
   );
