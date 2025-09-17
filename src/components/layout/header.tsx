@@ -14,6 +14,7 @@ const navLinks = [
   { name: 'Events', href: '#events' },
   { name: 'Glimpses', href: '#glimpses' },
   { name: 'Sponsors', href: '#sponsors' },
+  { name: 'Contact', href: '#contact' },
 ];
 
 const navVariants = {
@@ -77,7 +78,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Button asChild className="bg-gradient-to-r from-[hsl(var(--accent))] to-[hsl(var(--accent-secondary))] text-accent-foreground font-bold hover:opacity-90 transition-opacity">
+            <Button asChild className="bg-gradient-to-r from-purple-500 to-indigo-600 text-primary-foreground font-bold hover:opacity-90 transition-opacity">
               <Link href="/register">Register Now</Link>
             </Button>
           </motion.div>
@@ -107,7 +108,7 @@ export default function Header() {
                       </SheetClose>
                     ))}
                     <SheetClose asChild>
-                       <Button asChild className="bg-gradient-to-r from-[hsl(var(--accent))] to-[hsl(var(--accent-secondary))] text-accent-foreground font-bold hover:opacity-90 transition-opacity mt-4">
+                       <Button asChild className="bg-gradient-to-r from-purple-500 to-indigo-600 text-primary-foreground font-bold hover:opacity-90 transition-opacity mt-4">
                         <Link href="/register">Register Now</Link>
                       </Button>
                     </SheetClose>

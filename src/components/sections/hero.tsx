@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { motion } from 'framer-motion';
 import { SplineRobot } from '@/components/ui/spline-robot';
+import Link from 'next/link';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -47,8 +48,8 @@ export default function Hero() {
         </motion.div>
         
         <motion.div variants={itemVariants} className="flex justify-center lg:justify-start">
-          <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--accent))] to-[hsl(var(--accent-secondary))] text-accent-foreground font-bold hover:opacity-90 transition-opacity">
-            Register for Event
+          <Button size="lg" asChild className="bg-gradient-to-r from-purple-500 to-indigo-600 text-primary-foreground font-bold hover:opacity-90 transition-opacity">
+            <Link href="/register">Register for Event</Link>
           </Button>
         </motion.div>
       </motion.div>
