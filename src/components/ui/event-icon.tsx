@@ -1,9 +1,9 @@
-import { Code, TestTube, Search, Tv, Cpu, Briefcase, Lightbulb, FileText, BrainCircuit, LineChart, MessageSquare, Building } from "lucide-react";
+import { Code, TestTube, Search, Tv, Cpu, Briefcase, Lightbulb, FileText, BrainCircuit, LineChart, MessageSquare, Building, Feather, Camera, Gamepad2 } from "lucide-react";
 
 export type IconName = 
   | 'codex' | 'codelicious' | 'compute' | 'dataquest' | 'webapp' 
   | 'electroquest' | 'hirehustle' | 'dextrous' | 'paper' | 'innowave'
-  | 'quiz' | 'bplan' | 'wallstreet' | 'panel';
+  | 'quiz' | 'bplan' | 'wallstreet' | 'panel' | 'fandom' | 'insight' | 'freeze';
 
 const CodeliciousIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -43,6 +43,9 @@ const icons: Record<IconName, React.FC<React.SVGProps<SVGSVGElement>>> = {
   bplan: (props) => <Building {...props} />,
   wallstreet: (props) => <LineChart {...props} />,
   panel: (props) => <Code {...props} />,
+  fandom: (props) => <Gamepad2 {...props} />,
+  insight: (props) => <Feather {...props} />,
+  freeze: (props) => <Camera {...props} />,
 };
 
 interface EventIconProps extends React.SVGProps<SVGSVGElement> {

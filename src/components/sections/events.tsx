@@ -18,10 +18,13 @@ const technicalEvents = [
 ] as { name: string; icon: IconName }[];
 
 const nonTechnicalEvents = [
-    { name: 'Biz-Quiz', icon: 'quiz' },
-    { name: 'B-Plan', icon: 'bplan' },
-    { name: 'Wallstreet', icon: 'wallstreet' },
-    { name: 'Panel Discussion', icon: 'panel' },
+    { name: 'Fandom tmkoc', icon: 'fandom' },
+    { name: 'Fandom cricket', icon: 'fandom' },
+    { name: 'Fandom football', icon: 'fandom' },
+    { name: 'Fandom sitcom', icon: 'fandom' },
+    { name: 'Fandom anime', icon: 'fandom' },
+    { name: 'Insight', icon: 'insight' },
+    { name: 'Freeze the second', icon: 'freeze' },
 ] as { name: string; icon: IconName }[];
 
 
