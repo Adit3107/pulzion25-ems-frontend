@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { NetworkBackground } from '@/components/ui/network-background';
-import { Gamepad2 } from 'lucide-react';
+import { Gamepad2, ArrowLeft } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function RegisterPage() {
@@ -14,8 +14,11 @@ export default function RegisterPage() {
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center bg-background p-4 overflow-hidden">
       <NetworkBackground />
       <div className="absolute top-4 left-4 z-20">
-        <Button asChild variant="outline">
-          <Link href="/">Back to Home</Link>
+        <Button asChild variant="ghost" size="icon">
+          <Link href="/">
+            <ArrowLeft className="h-6 w-6" />
+            <span className="sr-only">Back to Home</span>
+          </Link>
         </Button>
       </div>
       
