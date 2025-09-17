@@ -1,8 +1,12 @@
+
 "use client";
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { motion } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { name: 'Home', href: '#home' },
@@ -28,6 +32,8 @@ const linkVariants = {
 };
 
 export default function Header() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
@@ -66,6 +72,7 @@ export default function Header() {
         </motion.nav>
         <div className="flex flex-1 items-center justify-end space-x-4">
           <motion.div
+            className="hidden md:block"
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -74,6 +81,41 @@ export default function Header() {
               <Link href="/register">Register Now</Link>
             </Button>
           </motion.div>
+          <div className="md:hidden">
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Open menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[280px] bg-background">
+                <div className="flex flex-col h-full">
+                  <div className="flex justify-between items-center p-4 border-b border-border/40">
+                    <h2 className="font-bold font-headline text-lg">Menu</h2>
+                  </div>
+                  <nav className="flex-grow flex flex-col items-center justify-center gap-6 text-lg">
+                    {navLinks.map((link) => (
+                      <SheetClose asChild key={link.name}>
+                        <Link
+                          href={link.href}
+                          className="transition-colors hover:text-primary text-foreground"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                      </SheetClose>
+                    ))}
+                    <SheetClose asChild>
+                       <Button asChild className="bg-gradient-to-r from-[hsl(var(--accent))] to-[hsl(var(--accent-secondary))] text-accent-foreground font-bold hover:opacity-90 transition-opacity mt-4">
+                        <Link href="/register">Register Now</Link>
+                      </Button>
+                    </SheetClose>
+                  </nav>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </motion.header>
