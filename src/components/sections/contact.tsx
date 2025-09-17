@@ -31,10 +31,10 @@ const contactDetails = [
 ];
 
 const socialLinks = [
-    { icon: <Facebook className="h-6 w-6" />, href: "#" },
-    { icon: <Instagram className="h-6 w-6" />, href: "#" },
-    { icon: <Linkedin className="h-6 w-6" />, href: "#" },
-    { icon: <Twitter className="h-6 w-6" />, href: "#" },
+    { icon: <Facebook className="h-8 w-8" />, href: "#" },
+    { icon: <Instagram className="h-8 w-8" />, href: "#" },
+    { icon: <Linkedin className="h-8 w-8" />, href: "#" },
+    { icon: <Twitter className="h-8 w-8" />, href: "#" },
 ];
 
 export default function Contact() {
@@ -88,8 +88,8 @@ export default function Contact() {
         </div>
 
         <div className="text-center mt-20">
-          <h3 className="text-2xl font-headline font-bold mb-6">Follow Us</h3>
-          <div className="flex justify-center gap-6">
+          <h3 className="text-3xl font-headline font-bold mb-8">Follow Us</h3>
+          <div className="flex justify-center gap-8">
             {socialLinks.map((link, index) => (
               <a key={index} href={link.href} target="_blank" rel="noopener noreferrer" className="text-foreground/80 hover:text-primary transition-colors duration-300">
                 {link.icon}
