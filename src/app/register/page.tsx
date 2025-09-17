@@ -100,13 +100,13 @@ export default function RegisterPage() {
                 <Label htmlFor="confirm-password">Confirm Password</Label>
                 <Input id="confirm-password" type="password" required />
               </div>
-              <Button type="submit" className="w-full bg-gradient-to-r from-[hsl(var(--accent))] to-[hsl(var(--accent-secondary))] text-accent-foreground font-bold hover:opacity-90 transition-opacity">
+              <Button type="submit" className="w-full bg-gradient-to-r from-[hsl(var(--primary))] to-purple-600 text-primary-foreground font-bold hover:opacity-90 transition-opacity">
                 Sign Up
               </Button>
             </form>
             <div className="mt-4 text-center text-sm">
               Already have an account?{' '}
-              <Link href="#" className="underline">
+              <Link href="/login" className="underline">
                 LOGIN
               </Link>
             </div>
