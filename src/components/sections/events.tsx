@@ -2,7 +2,6 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedSection } from '@/components/ui/animated-section';
-import { EventCardSpline } from '@/components/ui/event-card-spline';
 import { EventIcon, type IconName } from '@/components/ui/event-icon';
 
 const technicalEvents = [
@@ -39,9 +38,6 @@ export default function Events() {
 
         <div className="grid md:grid-cols-2 gap-8">
           <Card className="flex flex-col bg-card/50 border-primary/20 hover:border-primary/50 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm overflow-hidden">
-            <div className="h-64 w-full">
-              <EventCardSpline scene="https://prod.spline.design/Qoy-vjA0hJ9zrXvV/scene.splinecode" />
-            </div>
             <CardHeader>
               <CardTitle className="pt-4 font-headline text-2xl text-center">Technical Events</CardTitle>
             </CardHeader>
@@ -58,9 +54,6 @@ export default function Events() {
           </Card>
           
           <Card className="flex flex-col bg-card/50 border-primary/20 hover:border-primary/50 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm overflow-hidden">
-             <div className="h-64 w-full">
-               <EventCardSpline scene="https://prod.spline.design/I1p3-aGei3y2GvjT/scene.splinecode"/>
-            </div>
             <CardHeader>
               <CardTitle className="pt-4 font-headline text-2xl text-center">Non-Technical Events</CardTitle>
             </CardHeader>
