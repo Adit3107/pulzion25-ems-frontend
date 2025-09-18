@@ -39,7 +39,7 @@ export default function Hero() {
         className="space-y-6 text-center lg:text-left z-10 lg:pl-10"
       >
         <motion.div variants={itemVariants} className="flex flex-col items-center lg:items-start">
-          <h1 className="text-6xl md:text-8xl font-headline font-bold tracking-tighter bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(var(--primary-rgb),0.5)]">
+          <h1 className="text-6xl md:text-8xl lg:text-[8rem] font-headline font-bold tracking-tighter bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(var(--primary-rgb),0.5)]">
             PULZION'25
           </h1>
           <h2 className="text-2xl md:text-3xl font-headline font-bold text-foreground">
@@ -49,7 +49,7 @@ export default function Hero() {
         
         <motion.div variants={itemVariants} className="flex justify-center lg:justify-start">
           <Button size="lg" asChild className="bg-gradient-to-r from-purple-500 to-indigo-600 text-primary-foreground font-bold hover:opacity-90 transition-opacity">
-            <Link href="/register">Register for Event</Link>
+            <Link href="/register">Participate Now</Link>
           </Button>
         </motion.div>
       </motion.div>

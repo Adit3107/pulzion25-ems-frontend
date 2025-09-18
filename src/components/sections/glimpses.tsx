@@ -18,7 +18,7 @@ export default function Glimpses() {
     <AnimatedSection id="glimpses" className="py-20 md:py-32">
       <div className="container">
         <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-5xl font-headline font-bold">Glimpses of Pulzion</h2>
+          <h2 className="text-3xl md:text-5xl font-headline font-bold">Glimpses </h2>
           <p className="max-w-2xl mx-auto text-foreground/80">
             A look back at the moments that made last year's event unforgettable.
           </p>

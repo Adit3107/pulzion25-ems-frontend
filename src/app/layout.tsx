@@ -3,7 +3,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'AI GridLock Portal',
+  title: `PULZION'25 - The Ai Gridlock`,
   description: 'Welcome to the future of AI events.',
 };
 

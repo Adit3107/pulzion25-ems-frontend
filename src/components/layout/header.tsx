@@ -1,29 +1,26 @@
-
 "use client";
 
-import { useState } from 'react';
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { motion } from "framer-motion";
+import { Menu } from "lucide-react";
 
 const navLinks = [
-  { name: 'Home', href: '#home' },
-  { name: 'About', href: '#about' },
-  { name: 'Events', href: '#events' },
-  { name: 'Glimpses', href: '#glimpses' },
-  { name: 'Sponsors', href: '#sponsors' },
-  { name: 'Contact', href: '#contact' },
+  { name: "Home", href: "#home" },
+  { name: "About", href: "#about" },
+  { name: "Events", href: "#events" },
+  { name: "Glimpses", href: "#glimpses" },
+  { name: "Sponsors", href: "#sponsors" },
+  { name: "Contact", href: "#contact" },
 ];
 
 const navVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -39,26 +36,31 @@ export default function Header() {
     <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
     >
-      <div className="container flex h-16 items-center">
+      <div className="container flex h-18 xl:h-20 items-center">
+        {/* Logo */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mr-4 flex items-center"
+          className="mr-6 flex items-center"
         >
-          <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold font-headline text-2xl">Pulzion</span>
+          <Link href="/" className="flex items-center space-x-2">
+            <span className="font-bold font-headline text-xl lg:text-2xl xl:text-[1.75rem]">
+              Pulzion
+            </span>
           </Link>
         </motion.div>
+
+        {/* Desktop Nav */}
         <motion.nav
           variants={navVariants}
           initial="hidden"
           animate="visible"
           transition={{ delayChildren: 0.3 }}
-          className="hidden md:flex flex-1 items-center justify-center space-x-8 text-sm font-medium"
+          className="hidden md:flex flex-1 items-center justify-center space-x-5 lg:space-x-8 xl:space-x-10 text-sm lg:text-base xl:text-lg font-medium"
         >
           {navLinks.map((link) => (
             <motion.div key={link.name} variants={linkVariants}>
@@ -72,6 +74,8 @@ export default function Header() {
             </motion.div>
           ))}
         </motion.nav>
+
+        {/* Right side */}
         <div className="flex flex-1 md:flex-initial items-center justify-end space-x-4">
           <motion.div
             className="hidden md:block"
@@ -79,10 +83,16 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Button asChild className="bg-gradient-to-r from-purple-500 to-indigo-600 text-primary-foreground font-bold hover:opacity-90 transition-opacity">
-              <Link href="/register">Register Now</Link>
+            <Button
+              asChild
+              size="lg"
+              className="text-sm lg:text-base xl:text-lg px-5 lg:px-6 xl:px-7 py-2.5 lg:py-3 bg-gradient-to-r from-purple-500 to-indigo-600 text-primary-foreground font-bold hover:opacity-90 transition-opacity"
+            >
+              <Link href="/register">Login</Link>
             </Button>
           </motion.div>
+
+          {/* Mobile Menu */}
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
@@ -109,8 +119,11 @@ export default function Header() {
                       </SheetClose>
                     ))}
                     <SheetClose asChild>
-                       <Button asChild className="bg-gradient-to-r from-purple-500 to-indigo-600 text-primary-foreground font-bold hover:opacity-90 transition-opacity mt-4">
-                        <Link href="/register">Register Now</Link>
+                      <Button
+                        asChild
+                        className="bg-gradient-to-r from-purple-500 to-indigo-600 text-primary-foreground font-bold hover:opacity-90 transition-opacity mt-4"
+                      >
+                        <Link href="/register">Login</Link>
                       </Button>
                     </SheetClose>
                   </nav>

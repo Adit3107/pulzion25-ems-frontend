@@ -10,13 +10,13 @@ import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'luc
 const contactDetails = [
     {
         icon: <Phone className="h-6 w-6 text-primary" />,
-        title: "Harsha Pareek:",
-        text: "(+91) 93226 78365",
+        title: "Aditya Kalmegh:",
+        text: "(+91) xxxx 78365",
     },
     {
         icon: <Phone className="h-6 w-6 text-primary" />,
-        title: "Aashlesh Wawge:",
-        text: "(+91) 94203 24148",
+        title: "Vivek Bhalke:",
+        text: "(+91) xxxx 24148",
     },
     {
         icon: <Mail className="h-6 w-6 text-primary" />,
