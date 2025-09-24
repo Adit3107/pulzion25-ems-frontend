@@ -10,8 +10,8 @@
 
 @layer base {
   :root {
-    /* Base theme: Dark, cyberpunk aesthetic */
-    --background: 220 40% 5%; /* #05080f - Lighter charcoal blue */
+    /* Base theme: Dark, cyberpunk aesthetic based on image */
+    --background: 220 40% 5%; /* #05080f - Dark charcoal blue */
     --foreground: 210 40% 100%; /* #ffffff - Pure white */
 
     --card: 220 40% 7%; /* Slightly lighter than background */
@@ -20,9 +20,9 @@
     --popover: 220 40% 5%;
     --popover-foreground: 210 40% 100%;
 
-    /* Primary color for heroic/player actions */
-    --primary: 225 70% 50%; /* #3B82F6 - Brighter Persian Blue */
-    --primary-foreground: 210 40% 98%;
+    /* Primary color for heroic/player actions - Electric Cyan from image */
+    --primary: 188 100% 45%; /* #00e1f0 - Electric Cyan */
+    --primary-foreground: 220 40% 5%; /* Dark for high contrast */
 
     /* Secondary for general UI highlights */
     --secondary: 265 82% 65%; /* #a855f7 - Brighter Veronica Purple */
@@ -32,12 +32,12 @@
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
 
-    /* Accent color for AI/antagonist elements or special alerts */
-    --accent: 100 66% 63%; /* #69d84f - SGBUS Green */
-    --accent-foreground: 224 71% 4%;
+    /* Accent color for AI/antagonist elements or special alerts - Red from image */
+    --accent: 0 84% 60%; /* #f02849 - Rogue Red/Magenta */
+    --accent-foreground: 210 40% 98%;
     
-    /* Destructive color */
-    --destructive: 0 84% 60%;
+    /* Destructive color - matched to accent for consistency */
+    --destructive: 0 84% 60%; /* #f02849 */
     --destructive-foreground: 210 40% 98%;
 
     --border: 217 33% 17%;
@@ -61,14 +61,14 @@
     --card-foreground: 210 40% 100%;
     --popover: 220 40% 5%;
     --popover-foreground: 210 40% 100%;
-    --primary: 225 70% 50%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 188 100% 45%;
+    --primary-foreground: 220 40% 5%;
     --secondary: 265 82% 65%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
-    --accent: 100 66% 63%;
-    --accent-foreground: 224 71% 4%;
+    --accent: 0 84% 60%;
+    --accent-foreground: 210 40% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
     --border: 217 33% 17%;

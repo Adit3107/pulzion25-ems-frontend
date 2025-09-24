@@ -1,4 +1,3 @@
-
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -81,7 +80,7 @@ export default function Contact() {
                   <Label htmlFor="message">Message</Label>
                   <Textarea id="message" placeholder="Your Message" className="bg-background/50" rows={4}/>
                 </div>
-                <Button type="submit" className="w-full bg-ai-grid text-primary-foreground font-bold hover:opacity-90 transition-opacity">Submit</Button>
+                <Button type="submit" variant="destructive" className="w-full text-destructive-foreground font-bold hover:opacity-90 transition-opacity">Submit</Button>
               </form>
             </CardContent>
           </Card>

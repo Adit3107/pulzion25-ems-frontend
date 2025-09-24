@@ -23,7 +23,7 @@ export default function RegisterPage() {
       </div>
       
       <div className="z-10 w-full max-w-2xl">
-        <Card className="bg-background/70 backdrop-blur-lg border-secondary/50">
+        <Card className="bg-background/70 backdrop-blur-lg border-primary/50">
           <CardHeader className="text-center">
             <CardTitle className="font-headline text-3xl flex items-center justify-center gap-2">
               <Gamepad2 /> REGISTER
