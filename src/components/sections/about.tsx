@@ -1,8 +1,21 @@
+
+"use client";
+
+import * as React from "react";
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { Counter } from '@/components/ui/counter';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Typewriter } from '@/components/ui/typewriter';
 import { LiveTimestamp } from '@/components/ui/live-timestamp';
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+import { Button } from "../ui/button";
 
 const stats = [
   { value: '13', label: 'ACTIVE MISSIONS' },
@@ -39,6 +52,24 @@ const Metadata = () => (
 );
 
 export default function About() {
+  const [api, setApi] = React.useState<CarouselApi>()
+  const [current, setCurrent] = React.useState(0)
+  const [count, setCount] = React.useState(0)
+
+  React.useEffect(() => {
+    if (!api) {
+      return
+    }
+
+    setCount(api.scrollSnapList().length)
+    setCurrent(api.selectedScrollSnap() + 1)
+
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1)
+    })
+  }, [api])
+
+
   return (
     <AnimatedSection id="about" className="py-20 md:py-32">
       <div className="container">
@@ -76,20 +107,34 @@ export default function About() {
             </div>
         </div>
 
-        <Tabs defaultValue="pasc" className="w-full">
-            <TabsList className="grid w-full grid-cols-3">
-                {organizations.map(org => (
-                    <TabsTrigger key={org.id} value={org.id}>[ {org.title} ]</TabsTrigger>
+        <Carousel setApi={setApi} className="w-full">
+            <CarouselContent>
+                {organizations.map((org) => (
+                    <CarouselItem key={org.id} className="md:basis-1/2 lg:basis-1/3">
+                        <div className="p-1 h-full">
+                            <Card className="h-full flex flex-col justify-center bg-background/50 border border-primary/20 backdrop-blur-sm">
+                                <CardContent className="p-6 text-center space-y-4">
+                                    <h3 className="text-2xl font-headline text-secondary">[ {org.title} ]</h3>
+                                    <p className="text-foreground/80 font-code text-sm md:text-base min-h-[150px]">{org.description}</p>
+                                </CardContent>
+                            </Card>
+                        </div>
+                    </CarouselItem>
                 ))}
-            </TabsList>
-            {organizations.map(org => (
-                 <TabsContent key={org.id} value={org.id}>
-                    <div className="p-6 bg-background/50 border border-primary/20 backdrop-blur-sm mt-4">
-                        <p className="text-foreground/80 text-center font-code text-sm md:text-base">{org.description}</p>
-                    </div>
-                </TabsContent>
-            ))}
-        </Tabs>
+            </CarouselContent>
+            <div className="flex justify-center items-center gap-4 mt-6 font-code text-primary">
+                <CarouselPrevious>
+                    <Button variant="ghost" className="hover:bg-primary/10">{"< PREV_ENTITY"}</Button>
+                </CarouselPrevious>
+                <div className="text-center text-sm text-foreground/70">
+                    [ {String(current).padStart(2, '0')} / {String(count).padStart(2, '0')} ]
+                </div>
+                <CarouselNext>
+                    <Button variant="ghost" className="hover:bg-primary/10">{"NEXT_ENTITY >"}</Button>
+                </CarouselNext>
+            </div>
+        </Carousel>
+
       </div>
     </AnimatedSection>
   );
