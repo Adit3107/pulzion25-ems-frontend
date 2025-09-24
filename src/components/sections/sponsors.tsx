@@ -8,18 +8,18 @@ export default function Sponsors() {
     <AnimatedSection id="sponsors" className="py-20 md:py-32">
       <div className="container">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-5xl font-headline font-bold">Our Sponsors</h2>
-          <p className="text-foreground/80 max-w-2xl mx-auto">
-            We are proud to be supported by these innovative companies.
+          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary tracking-widest">[ SUPPORTING CELLS ]</h2>
+          <p className="text-foreground/80 max-w-2xl mx-auto font-code">
+            // These organizations provide critical support to the resistance network.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {sponsors.map((name) => (
             <div key={name} className="relative group">
-              <div className="absolute -inset-0.5 bg-ai-grid rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-glow"></div>
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-secondary to-primary rounded-lg blur opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
               <Card className="relative bg-background h-full flex items-center justify-center">
                 <CardContent className="p-6">
-                  <p className="text-2xl font-bold text-center text-foreground">{name}</p>
+                  <p className="text-2xl font-bold text-center text-foreground font-headline">{name}</p>
                 </CardContent>
               </Card>
             </div>

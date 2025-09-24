@@ -5,13 +5,13 @@ import Events from '@/components/sections/events';
 import Glimpses from '@/components/sections/glimpses';
 import Sponsors from '@/components/sections/sponsors';
 import Contact from '@/components/sections/contact';
+import { AnimatedGridBackground } from '@/components/ui/animated-grid-background';
 import Footer from '@/components/layout/footer';
-import ParticleBackground from '@/components/ui/particle-background';
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <ParticleBackground />
+    <div className="flex flex-col min-h-screen scanlines">
+      <AnimatedGridBackground />
       <Header />
       <main className="flex-grow">
         <Hero />

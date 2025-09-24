@@ -38,7 +38,7 @@ export default function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      className="sticky top-0 z-50 w-full border-b border-primary/20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
     >
       <div className="container flex h-16 items-center">
         <motion.div
@@ -48,7 +48,7 @@ export default function Header() {
           className="mr-4 flex items-center"
         >
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <span className="font-bold font-headline text-2xl">Pulzion</span>
+            <span className="font-bold font-headline text-2xl">PULZION</span>
           </Link>
         </motion.div>
         <motion.nav
@@ -62,7 +62,7 @@ export default function Header() {
             <motion.div key={link.name} variants={linkVariants}>
               <Link
                 href={link.href}
-                className="group relative transition-colors text-foreground"
+                className="group relative transition-colors text-foreground hover:text-primary"
               >
                 {link.name}
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300" />
@@ -77,22 +77,22 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Button asChild className="bg-ai-grid text-primary-foreground font-bold hover:opacity-90 transition-opacity">
-              <Link href="/register">Register Now</Link>
+            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_15px_theme(colors.primary)]">
+              <Link href="/register">[ JOIN THE RESISTANCE ]</Link>
             </Button>
           </motion.div>
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-6 w-6 text-primary" />
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] bg-background">
                 <div className="flex flex-col h-full">
-                  <div className="flex justify-between items-center p-4 border-b border-white/10">
-                    <h2 className="font-bold font-headline text-lg">Menu</h2>
+                  <div className="flex justify-between items-center p-4 border-b border-primary/20">
+                    <h2 className="font-bold font-headline text-lg">NAVIGATION</h2>
                   </div>
                   <nav className="flex-grow flex flex-col items-center justify-center gap-6 text-lg">
                     {navLinks.map((link) => (
@@ -107,8 +107,8 @@ export default function Header() {
                       </SheetClose>
                     ))}
                     <SheetClose asChild>
-                       <Button asChild className="bg-ai-grid text-primary-foreground font-bold hover:opacity-90 transition-opacity mt-4">
-                        <Link href="/register">Register Now</Link>
+                       <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_15px_theme(colors.primary)] mt-4">
+                        <Link href="/register">[ JOIN THE RESISTANCE ]</Link>
                       </Button>
                     </SheetClose>
                   </nav>

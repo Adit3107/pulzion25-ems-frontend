@@ -3,6 +3,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { EventIcon, type IconName } from '@/components/ui/event-icon';
+import { Button } from '../ui/button';
 
 const technicalEvents = [
   { name: 'Codex', icon: 'codex' },
@@ -33,44 +34,48 @@ export default function Events() {
     <AnimatedSection id="events" className="py-20 md:py-32">
       <div className="container">
         <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-5xl font-headline font-bold">Events</h2>
-          <p className="max-w-2xl mx-auto text-foreground/80">
-            Explore our curated list of events, separated into technical and non-technical categories.
+          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary tracking-widest">[ MISSION BRIEFINGS ]</h2>
+          <p className="max-w-2xl mx-auto text-foreground/80 font-code">
+            // ANALYZE THE AVAILABLE MISSIONS. CHOOSE YOUR OBJECTIVES. EXECUTE.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <Card className="flex flex-col bg-background/50 border-primary/20 hover:border-primary/50 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm overflow-hidden">
-            <CardHeader>
-              <CardTitle className="pt-4 font-headline text-2xl text-center">Technical Events</CardTitle>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+        <div className="space-y-16">
+          <div id="technical-missions">
+              <h3 className="text-2xl md:text-3xl font-headline text-secondary mb-8 text-center">[ TECHNICAL OPERATIONS ]</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {technicalEvents.map((event) => (
-                  <div key={event.name} className="flex flex-col items-center gap-3 p-4 rounded-lg bg-background/30 hover:bg-primary/20 transition-colors duration-300">
-                    <EventIcon name={event.icon} className="w-12 h-12 text-primary" />
-                    <h4 className="font-semibold">{event.name}</h4>
-                  </div>
+                  <Card key={event.name} className="group bg-transparent border-primary/30 hover:border-primary transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
+                     <CardContent className="p-4 flex flex-col items-center justify-center text-center h-full">
+                      <div className="p-4 bg-primary/10 mb-4 border border-primary/30 group-hover:bg-primary/20 group-hover:shadow-[0_0_15px_theme(colors.primary)] transition-all duration-300">
+                        <EventIcon name={event.icon} className="w-10 h-10 text-primary" />
+                      </div>
+                      <h4 className="font-headline text-xl text-primary/90 mb-2">{event.name}</h4>
+                      <p className="text-xs font-code text-foreground/60 flex-grow">A brief, cryptic description of the mission objective would go here.</p>
+                      <Button variant="ghost" className="mt-4 text-primary group-hover:text-background group-hover:bg-primary w-full">Engage</Button>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+          </div>
           
-          <Card className="flex flex-col bg-background/50 border-primary/20 hover:border-primary/50 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm overflow-hidden">
-            <CardHeader>
-              <CardTitle className="pt-4 font-headline text-2xl text-center">Non-Technical Events</CardTitle>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+          <div id="non-technical-missions">
+              <h3 className="text-2xl md:text-3xl font-headline text-secondary mb-8 text-center">[ NON-TECHNICAL OPERATIONS ]</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {nonTechnicalEvents.map((event) => (
-                   <div key={event.name} className="flex flex-col items-center gap-3 p-4 rounded-lg bg-background/30 hover:bg-primary/20 transition-colors duration-300">
-                    <EventIcon name={event.icon} className="w-12 h-12 text-primary" />
-                    <h4 className="font-semibold">{event.name}</h4>
-                  </div>
+                   <Card key={event.name} className="group bg-transparent border-primary/30 hover:border-primary transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
+                     <CardContent className="p-4 flex flex-col items-center justify-center text-center h-full">
+                      <div className="p-4 bg-primary/10 mb-4 border border-primary/30 group-hover:bg-primary/20 group-hover:shadow-[0_0_15px_theme(colors.primary)] transition-all duration-300">
+                        <EventIcon name={event.icon} className="w-10 h-10 text-primary" />
+                      </div>
+                      <h4 className="font-headline text-xl text-primary/90 mb-2">{event.name}</h4>
+                      <p className="text-xs font-code text-foreground/60 flex-grow">A brief, cryptic description of the mission objective would go here.</p>
+                      <Button variant="ghost" className="mt-4 text-primary group-hover:text-background group-hover:bg-primary w-full">Engage</Button>
+                    </CardContent>
+                  </Card>
                 ))}
               </div>
-            </CardContent>
-          </Card>
+          </div>
         </div>
       </div>
     </AnimatedSection>

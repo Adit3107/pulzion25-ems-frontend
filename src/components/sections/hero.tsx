@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { motion } from 'framer-motion';
-import { SplineRobot } from '@/components/ui/spline-robot';
+import { GlitchEffect } from '@/components/ui/glitch-effect';
 import Link from 'next/link';
 
 const containerVariants = {
@@ -31,30 +31,39 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <AnimatedSection id="home" className="container grid lg:grid-cols-2 gap-10 items-center py-20 md:py-32 min-h-[calc(100vh_-_56px)]">
+    <AnimatedSection id="home" className="container grid lg:grid-cols-2 gap-10 items-center py-20 md:py-32 min-h-[calc(100vh_-_64px)]">
       <motion.div 
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="space-y-6 text-center lg:text-left z-10 lg:pl-10"
+        className="space-y-8 text-center lg:text-left z-10"
       >
-        <motion.div variants={itemVariants} className="flex flex-col items-center lg:items-start">
-          <h1 className="text-6xl md:text-8xl font-headline font-bold tracking-tighter bg-ai-grid bg-clip-text text-transparent drop-shadow-[0_0_15px_rgba(30,64,175,0.5)]">
-            PULZION'25
-          </h1>
-          <h2 className="text-2xl md:text-3xl font-headline font-bold text-foreground">
-            -The Ai Gridlock-
-          </h2>
-        </motion.div>
+        <GlitchEffect>
+          <motion.div variants={itemVariants} className="flex flex-col items-center lg:items-start">
+            <h1 className="text-6xl md:text-8xl font-headline font-bold tracking-tighter text-primary drop-shadow-[0_0_15px_theme(colors.primary)]">
+              PULZION'25
+            </h1>
+            <h2 className="text-2xl md:text-3xl font-headline font-bold text-foreground tracking-[0.2em]">
+              AI GRIDLOCK
+            </h2>
+          </motion.div>
+        </GlitchEffect>
+        
+        <motion.p 
+            variants={itemVariants}
+            className="max-w-lg mx-auto lg:mx-0 font-code text-foreground/80"
+        >
+            // SYSTEM ALERT: Anomaly detected. Gridlock protocol initiated. Operative, your intervention is required.
+        </motion.p>
         
         <motion.div variants={itemVariants} className="flex justify-center lg:justify-start">
-          <Button size="lg" asChild className="bg-ai-grid text-primary-foreground font-bold hover:opacity-90 transition-opacity">
-            <Link href="/register">Register for Event</Link>
+          <Button size="lg" asChild variant="outline" className="font-bold font-headline tracking-widest border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_25px_theme(colors.primary)] transition-all duration-300">
+            <Link href="/register">[ JOIN THE RESISTANCE ]</Link>
           </Button>
         </motion.div>
       </motion.div>
-      <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full lg:h-[calc(100%_-_56px)] mt-14 z-0 scale-90">
-        <SplineRobot />
+      <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full z-0 opacity-20">
+         {/* Placeholder for a potential future background visual, like a city illustration */}
       </div>
     </AnimatedSection>
   );
