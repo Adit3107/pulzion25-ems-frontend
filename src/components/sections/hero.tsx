@@ -57,7 +57,7 @@ export default function Hero() {
         </motion.p>
         
         <motion.div variants={itemVariants} className="flex justify-center lg:justify-start">
-          <Button size="lg" asChild variant="outline" className="font-bold font-headline tracking-widest border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_25px_theme(colors.primary)] transition-all duration-300">
+          <Button size="lg" asChild className="font-bold font-headline tracking-widest border-2 border-primary text-primary-foreground bg-primary hover:bg-primary/90 hover:shadow-[0_0_25px_theme(colors.primary)] transition-all duration-300">
             <Link href="/register">[ JOIN THE RESISTANCE ]</Link>
           </Button>
         </motion.div>

@@ -38,7 +38,7 @@ export default function LoginPage() {
                 <Label htmlFor="password">Password</Label>
                 <Input id="password" type="password" placeholder="Enter password" required />
               </div>
-              <Button type="submit" className="w-full bg-ai-grid text-primary-foreground font-bold hover:opacity-90 transition-opacity">
+              <Button type="submit" className="w-full bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-opacity">
                 Login
               </Button>
             </form>

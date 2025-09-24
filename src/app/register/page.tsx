@@ -100,7 +100,7 @@ export default function RegisterPage() {
                 <Label htmlFor="confirm-password">Confirm Password</Label>
                 <Input id="confirm-password" type="password" required />
               </div>
-              <Button type="submit" className="w-full bg-ai-grid text-primary-foreground font-bold hover:opacity-90 transition-opacity">
+              <Button type="submit" className="w-full bg-primary text-primary-foreground font-bold hover:bg-primary/90 transition-opacity">
                 Sign Up
               </Button>
             </form>

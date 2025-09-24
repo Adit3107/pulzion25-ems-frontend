@@ -77,7 +77,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_15px_theme(colors.primary)]">
+            <Button asChild className="border-primary text-primary-foreground bg-primary hover:bg-primary/90 hover:shadow-[0_0_15px_theme(colors.primary)]">
               <Link href="/register">[ JOIN THE RESISTANCE ]</Link>
             </Button>
           </motion.div>
@@ -107,7 +107,7 @@ export default function Header() {
                       </SheetClose>
                     ))}
                     <SheetClose asChild>
-                       <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_15px_theme(colors.primary)] mt-4">
+                       <Button asChild className="border-primary text-primary-foreground bg-primary hover:bg-primary/90 hover:shadow-[0_0_15px_theme(colors.primary)] mt-4">
                         <Link href="/register">[ JOIN THE RESISTANCE ]</Link>
                       </Button>
                     </SheetClose>

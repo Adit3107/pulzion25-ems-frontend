@@ -32,7 +32,7 @@ export function AnimatedGridBackground() {
 
       ctx.fillStyle = 'rgba(2, 8, 23, 0.1)'; // Corresponds to --background
       ctx.fillRect(0, 0, width, height);
-      ctx.fillStyle = '#00ff00'; // Data Green
+      ctx.fillStyle = 'hsl(var(--accent))'; // Accent Green
       ctx.font = '15px monospace';
 
       for (let i = 0; i < drops.length; i++) {
@@ -48,7 +48,7 @@ export function AnimatedGridBackground() {
     };
     
     const drawGrid = () => {
-        ctx.strokeStyle = 'rgba(0, 225, 240, 0.1)'; // Primary color with low opacity
+        ctx.strokeStyle = 'rgba(30, 64, 175, 0.1)'; // Primary color with low opacity
         ctx.lineWidth = 1;
 
         for (let i = 0; i < width; i += 40) {
