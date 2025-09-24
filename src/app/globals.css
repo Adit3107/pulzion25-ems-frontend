@@ -82,7 +82,8 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background: radial-gradient(ellipse at center, hsl(220 40% 9%), hsl(var(--background)) 80%), hsl(var(--background));
   }
 }
 
