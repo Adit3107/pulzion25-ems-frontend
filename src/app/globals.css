@@ -11,21 +11,21 @@
 @layer base {
   :root {
     /* Base theme: Dark, cyberpunk aesthetic */
-    --background: 224 71% 4%; /* #020817 - A very dark, cool blue */
-    --foreground: 210 40% 98%; /* #f8fafc - Off-white for text */
+    --background: 220 40% 5%; /* #05080f - Lighter charcoal blue */
+    --foreground: 210 40% 100%; /* #ffffff - Pure white */
 
-    --card: 224 71% 6%; /* Slightly lighter than background */
-    --card-foreground: 210 40% 98%;
+    --card: 220 40% 7%; /* Slightly lighter than background */
+    --card-foreground: 210 40% 100%;
 
-    --popover: 224 71% 4%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 40% 5%;
+    --popover-foreground: 210 40% 100%;
 
     /* Primary color for heroic/player actions */
-    --primary: 225 70% 40%; /* #1E40AF - Persian Blue */
-    --primary-foreground: 210 40% 98%; /* Off-white text for primary buttons */
+    --primary: 225 70% 50%; /* #3B82F6 - Brighter Persian Blue */
+    --primary-foreground: 210 40% 98%;
 
     /* Secondary for general UI highlights */
-    --secondary: 265 82% 56%; /* #9333ea - Veronica Purple */
+    --secondary: 265 82% 65%; /* #a855f7 - Brighter Veronica Purple */
     --secondary-foreground: 210 40% 98%;
 
     /* Muted colors for less important elements */
@@ -47,23 +47,23 @@
     --radius: 0rem; /* No rounded corners */
     
     /* Team Colors (mapped to chart variables for leaderboards/visuals) */
-    --chart-1: 225 70% 40%; /* Team Charlie - Persian Blue #1E40AF */
-    --chart-2: 265 82% 56%; /* Team Delta - Veronica #9333EA */
-    --chart-3: 100 66% 63%; /* Team Echo - SGBUS Green #69D84F */
-    --chart-4: 48 96% 53%;  /* Team Bravo - Jonquil #FACC15 */
+    --chart-1: 225 70% 50%; /* Team Charlie - Brighter Persian Blue */
+    --chart-2: 265 82% 65%; /* Team Delta - Brighter Veronica */
+    --chart-3: 100 66% 63%; /* Team Echo - SGBUS Green */
+    --chart-4: 48 96% 53%;  /* Team Bravo - Jonquil */
     --chart-5: 188 100% 45%; /* Fallback/General UI - Electric Cyan */
   }
 
   .dark {
-    --background: 224 71% 4%;
-    --foreground: 210 40% 98%;
-    --card: 224 71% 6%;
-    --card-foreground: 210 40% 98%;
-    --popover: 224 71% 4%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 225 70% 40%;
+    --background: 220 40% 5%;
+    --foreground: 210 40% 100%;
+    --card: 220 40% 7%;
+    --card-foreground: 210 40% 100%;
+    --popover: 220 40% 5%;
+    --popover-foreground: 210 40% 100%;
+    --primary: 225 70% 50%;
     --primary-foreground: 210 40% 98%;
-    --secondary: 265 82% 56%;
+    --secondary: 265 82% 65%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
