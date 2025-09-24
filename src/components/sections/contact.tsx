@@ -9,12 +9,12 @@ import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from 'luc
 const contactDetails = [
     {
         icon: <Phone className="h-6 w-6 text-primary" />,
-        title: "Harsha Pareek:",
+        title: "Aditya Kalmegh:",
         text: "(+91) 93226 78365",
     },
     {
         icon: <Phone className="h-6 w-6 text-primary" />,
-        title: "Aashlesh Wawge:",
+        title: "Vivek Bhalke:",
         text: "(+91) 94203 24148",
     },
     {
