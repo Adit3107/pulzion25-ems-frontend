@@ -42,7 +42,7 @@ export default function Events() {
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16">
           <div id="technical-missions">
-              <h3 className="text-2xl md:text-3xl font-headline text-chart-4 mb-8 text-center">[ TECH OPS ]</h3>
+              <h3 className="text-2xl md:text-3xl font-headline text-secondary mb-8 text-center">[ TECH OPS ]</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {technicalEvents.map((event) => (
                   <CardSpotlight key={event.name}>
@@ -60,7 +60,7 @@ export default function Events() {
           </div>
           
           <div id="non-technical-missions">
-              <h3 className="text-2xl md:text-3xl font-headline text-chart-4 mb-8 text-center">[ NON-TECH OPS ]</h3>
+              <h3 className="text-2xl md:text-3xl font-headline text-secondary mb-8 text-center">[ NON-TECH OPS ]</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {nonTechnicalEvents.map((event) => (
                   <CardSpotlight key={event.name}>
