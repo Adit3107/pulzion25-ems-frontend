@@ -25,8 +25,8 @@ const ParticleBackground = () => {
     const positions = new Float32Array(particleCount * 3);
     const colors = new Float32Array(particleCount * 3);
 
-    const color1 = new THREE.Color("#1E40AF"); // Persian Blue
-    const color2 = new THREE.Color("#9333EA"); // Veronica
+    const color1 = new THREE.Color("#2563EB"); // primary color
+    const color2 = new THREE.Color("#A855F7"); // secondary color
     
     for (let i = 0; i < particleCount; i++) {
       const i3 = i * 3;

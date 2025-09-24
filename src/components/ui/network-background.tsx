@@ -46,7 +46,7 @@ export function NetworkBackground() {
         if (p1.x < -50) p1.x = width + 50;
         if (p1.y < -50) p1.y = height + 50;
         
-        ctx.fillStyle = '#9333EA'; // Veronica
+        ctx.fillStyle = '#A855F7'; // secondary color
         ctx.beginPath();
         ctx.arc(p1.x, p1.y, 2, 0, Math.PI * 2);
         ctx.fill();
@@ -59,7 +59,7 @@ export function NetworkBackground() {
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(30, 64, 175, ${1 - dist / maxDist})`; // Persian Blue
+            ctx.strokeStyle = `rgba(37, 99, 235, ${1 - dist / maxDist})`; // primary color
             ctx.stroke();
           }
         }

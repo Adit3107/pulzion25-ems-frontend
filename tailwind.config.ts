@@ -25,14 +25,14 @@ export default {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: '#0B0C10', // deep dark background for immersion
-        foreground: '#F5F5F5',
+        background: '#050505',
+        foreground: '#F9FAFB',
         primary: {
-          DEFAULT: '#1E40AF', // Persian Blue – core AI gridlock color
+          DEFAULT: '#2563EB',
           foreground: '#FFFFFF',
         },
         secondary: {
-          DEFAULT: '#9333EA', // Veronica – hacker/espionage accent
+          DEFAULT: '#A855F7',
           foreground: '#FFFFFF',
         },
         destructive: {
@@ -44,11 +44,11 @@ export default {
           foreground: "hsl(var(--muted-foreground))",
         },
         accent: {
-          DEFAULT: '#FACC15', // Jonquil – highlight/alerts
+          DEFAULT: '#FDE047',
           foreground: '#000000',
         },
         success: {
-          DEFAULT: '#69D84F', // SGBUS Green – decryption/mission success
+          DEFAULT: '#4ADE80',
           foreground: '#000000',
         },
         popover: {
@@ -60,16 +60,9 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      gradientColorStops: {
-        ai: {
-          start: '#1E40AF',
-          mid: '#9333EA',
-          end: '#FACC15',
-        },
-      },
       backgroundImage: {
-        'ai-grid': 'linear-gradient(135deg, #1E40AF 0%, #9333EA 50%, #FACC15 100%)',
-        'hacker-green': 'linear-gradient(135deg, #0B0C10 0%, #69D84F 100%)',
+        'ai-grid': 'linear-gradient(135deg, #2563EB 0%, #A855F7 50%, #FDE047 100%)',
+        'hacker-green': 'linear-gradient(135deg, #050505 0%, #4ADE80 100%)',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -86,8 +79,8 @@ export default {
           to: { height: "0" },
         },
         'pulse-glow': {
-          '0%, 100%': { boxShadow: '0 0 10px #9333EA, 0 0 20px #1E40AF' },
-          '50%': { boxShadow: '0 0 20px #FACC15, 0 0 40px #69D84F' },
+          '0%, 100%': { boxShadow: '0 0 12px #A855F7, 0 0 24px #2563EB' },
+          '50%': { boxShadow: '0 0 24px #FDE047, 0 0 48px #4ADE80' },
         },
       },
       animation: {
