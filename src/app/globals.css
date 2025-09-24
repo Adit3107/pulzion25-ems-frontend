@@ -83,7 +83,10 @@
   }
   body {
     @apply text-foreground;
-    background: radial-gradient(ellipse at center, hsl(220 40% 9%), hsl(var(--background)) 80%), hsl(var(--background));
+    background-color: hsl(var(--background));
+    background-image: 
+      radial-gradient(at 0% 0%, hsl(var(--primary) / 0.15) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsl(var(--chart-4) / 0.15) 0px, transparent 50%);
   }
 }
 
