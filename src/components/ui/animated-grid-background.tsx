@@ -23,10 +23,10 @@ export function AnimatedGridBackground() {
 
     let frameCount = 0;
 
-    const draw = () => {
+    const drawRain = () => {
       frameCount++;
       if (frameCount % 2 !== 0) {
-        requestAnimationFrame(draw);
+        requestAnimationFrame(drawRain);
         return;
       }
 
@@ -48,7 +48,8 @@ export function AnimatedGridBackground() {
     };
     
     const drawGrid = () => {
-        ctx.strokeStyle = 'rgba(30, 64, 175, 0.1)'; // Primary color with low opacity
+        if(!ctx) return;
+        ctx.strokeStyle = 'hsl(var(--primary) / 0.1)'; 
         ctx.lineWidth = 1;
 
         for (let i = 0; i < width; i += 40) {
@@ -66,13 +67,13 @@ export function AnimatedGridBackground() {
         }
     }
     
-    const initialDraw = () => {
+    const draw = () => {
         ctx.clearRect(0,0,width,height);
         drawGrid();
-        draw();
+        drawRain();
     }
 
-    const intervalId = setInterval(draw, 33);
+    const intervalId = setInterval(draw, 50);
     
     const handleResize = () => {
       width = canvas.width = window.innerWidth;
@@ -82,12 +83,12 @@ export function AnimatedGridBackground() {
       for (let i = 0; i < columns; i++) {
         drops[i] = 1;
       }
-      initialDraw();
+      draw();
     };
 
     window.addEventListener('resize', handleResize);
     
-    initialDraw();
+    draw();
 
     return () => {
       clearInterval(intervalId);
