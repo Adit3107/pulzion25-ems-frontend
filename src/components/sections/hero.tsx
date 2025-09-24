@@ -40,7 +40,7 @@ export default function Hero() {
       >
         <GlitchEffect>
           <motion.div variants={itemVariants} className="flex flex-col items-center">
-            <h1 className="text-6xl md:text-8xl font-headline font-bold tracking-tighter text-primary drop-shadow-[0_0_15px_theme(colors.primary)]">
+            <h1 className="text-6xl md:text-8xl font-headline font-bold tracking-tighter bg-gradient-to-r from-team-charlie via-team-delta to-team-bravo bg-clip-text text-transparent drop-shadow-[0_0_15px_theme(colors.primary)]">
               PULZION'25
             </h1>
             <h2 className="text-2xl md:text-3xl font-headline font-bold text-foreground tracking-[0.2em]">
