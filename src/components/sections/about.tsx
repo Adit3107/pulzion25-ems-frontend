@@ -16,6 +16,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import { Button } from "../ui/button";
+import { CardSpotlight } from "../ui/card-spotlight";
 
 const stats = [
   { value: '13', label: 'ACTIVE MISSIONS' },
@@ -111,14 +112,14 @@ export default function About() {
             <CarouselContent>
                 {organizations.map((org) => (
                     <CarouselItem key={org.id} className="md:basis-1/2 lg:basis-1/3">
-                        <div className="p-1 h-full">
+                         <CardSpotlight className="h-full">
                             <Card className="h-full flex flex-col justify-center bg-background/50 border border-primary/20 backdrop-blur-sm">
                                 <CardContent className="p-6 text-center space-y-4">
                                     <h3 className="text-2xl font-headline text-secondary">[ {org.title} ]</h3>
                                     <p className="text-foreground/80 font-code text-sm md:text-base min-h-[150px]">{org.description}</p>
                                 </CardContent>
                             </Card>
-                        </div>
+                        </CardSpotlight>
                     </CarouselItem>
                 ))}
             </CarouselContent>
