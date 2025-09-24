@@ -3,6 +3,7 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { EventIcon, type IconName } from '@/components/ui/event-icon';
+import { CardSpotlight } from '../ui/card-spotlight';
 
 const technicalEvents = [
   { name: 'Codex', icon: 'codex' },
@@ -44,14 +45,16 @@ export default function Events() {
               <h3 className="text-2xl md:text-3xl font-headline text-secondary mb-8 text-center">[ TECHNICAL OPERATIONS ]</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {technicalEvents.map((event) => (
-                  <Card key={event.name} className="group bg-transparent border-primary/30 hover:border-primary transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
-                     <CardContent className="p-4 flex flex-col items-center justify-center text-center aspect-square">
-                      <div className="p-3 bg-primary/10 mb-3 border border-primary/30 group-hover:bg-primary/20 group-hover:shadow-[0_0_15px_theme(colors.primary)] transition-all duration-300">
-                        <EventIcon name={event.icon} className="w-8 h-8 text-primary" />
-                      </div>
-                      <h4 className="font-headline text-base text-primary/90">{event.name}</h4>
-                    </CardContent>
-                  </Card>
+                  <CardSpotlight key={event.name}>
+                    <Card className="bg-transparent border-primary/30 h-full w-full">
+                       <CardContent className="p-4 flex flex-col items-center justify-center text-center aspect-square">
+                        <div className="p-3 bg-primary/10 mb-3 border border-primary/30 group-hover:bg-primary/20 group-hover:shadow-[0_0_15px_theme(colors.primary)] transition-all duration-300">
+                          <EventIcon name={event.icon} className="w-8 h-8 text-primary" />
+                        </div>
+                        <h4 className="font-headline text-base text-primary/90">{event.name}</h4>
+                      </CardContent>
+                    </Card>
+                  </CardSpotlight>
                 ))}
               </div>
           </div>
@@ -60,14 +63,16 @@ export default function Events() {
               <h3 className="text-2xl md:text-3xl font-headline text-secondary mb-8 text-center">[ NON-TECHNICAL OPERATIONS ]</h3>
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {nonTechnicalEvents.map((event) => (
-                   <Card key={event.name} className="group bg-transparent border-primary/30 hover:border-primary transition-all duration-300 transform hover:-translate-y-1 overflow-hidden">
-                     <CardContent className="p-4 flex flex-col items-center justify-center text-center aspect-square">
-                      <div className="p-3 bg-primary/10 mb-3 border border-primary/30 group-hover:bg-primary/20 group-hover:shadow-[0_0_15px_theme(colors.primary)] transition-all duration-300">
-                        <EventIcon name={event.icon} className="w-8 h-8 text-primary" />
-                      </div>
-                      <h4 className="font-headline text-base text-primary/90">{event.name}</h4>
-                    </CardContent>
-                  </Card>
+                  <CardSpotlight key={event.name}>
+                     <Card className="bg-transparent border-primary/30 h-full w-full">
+                       <CardContent className="p-4 flex flex-col items-center justify-center text-center aspect-square">
+                        <div className="p-3 bg-primary/10 mb-3 border border-primary/30 group-hover:bg-primary/20 group-hover:shadow-[0_0_15px_theme(colors.primary)] transition-all duration-300">
+                          <EventIcon name={event.icon} className="w-8 h-8 text-primary" />
+                        </div>
+                        <h4 className="font-headline text-base text-primary/90">{event.name}</h4>
+                      </CardContent>
+                    </Card>
+                  </CardSpotlight>
                 ))}
               </div>
           </div>
