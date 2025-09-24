@@ -41,7 +41,7 @@ export default function Contact() {
     <AnimatedSection id="contact" className="py-20 md:py-32">
       <div className="container">
         <div className="text-center space-y-4 mb-12">
-          <h2 className="text-3xl md:text-5xl font-headline font-bold">Contact Us</h2>
+            <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary tracking-widest">[ GET IN TOUCH ]</h2>
         </div>
         
         <div className="grid md:grid-cols-2 gap-12">

@@ -2,7 +2,6 @@ import Header from '@/components/layout/header';
 import Hero from '@/components/sections/hero';
 import About from '@/components/sections/about';
 import Events from '@/components/sections/events';
-import Glimpses from '@/components/sections/glimpses';
 import Sponsors from '@/components/sections/sponsors';
 import Contact from '@/components/sections/contact';
 import { AnimatedGridBackground } from '@/components/ui/animated-grid-background';
@@ -17,7 +16,6 @@ export default function Home() {
         <Hero />
         <About />
         <Events />
-        <Glimpses />
         <Sponsors />
         <Contact />
       </main>

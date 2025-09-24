@@ -8,7 +8,7 @@ export default function Sponsors() {
     <AnimatedSection id="sponsors" className="py-20 md:py-32">
       <div className="container">
         <div className="text-center space-y-4 mb-16">
-          <h2 className="text-3xl md:text-5xl font-headline font-bold text-secondary tracking-widest">[ SUPPORTING CELLS ]</h2>
+          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary tracking-widest">[ SUPPORTING CELLS ]</h2>
           <p className="text-foreground/80 max-w-2xl mx-auto font-code">
             // These organizations provide critical support to the resistance network.
           </p>
