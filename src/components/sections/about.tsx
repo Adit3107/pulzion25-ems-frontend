@@ -2,6 +2,7 @@ import { AnimatedSection } from '@/components/ui/animated-section';
 import { Counter } from '@/components/ui/counter';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Typewriter } from '@/components/ui/typewriter';
+import { LiveTimestamp } from '@/components/ui/live-timestamp';
 
 const stats = [
   { value: '13', label: 'ACTIVE MISSIONS' },
@@ -27,6 +28,16 @@ const organizations = [
     }
 ];
 
+const Metadata = () => (
+    <div className='font-code text-sm text-foreground/70 space-y-1'>
+        <p className='text-secondary font-bold tracking-widest'>// METADATA</p>
+        <p>TRANSMISSION ID: PZN25-DBRF-001</p>
+        <p>SOURCE: PASC Command</p>
+        <LiveTimestamp />
+        <p>STATUS: SECURE // DECRYPTED</p>
+    </div>
+);
+
 export default function About() {
   return (
     <AnimatedSection id="about" className="py-20 md:py-32">
@@ -48,9 +59,20 @@ export default function About() {
                     </div>
                 ))}
             </div>
-            <div className="space-y-2 text-foreground/90">
-                <p><Typewriter text="// LOG_ENTRY_01: PULZION IS THE ANNUAL FLAGSHIP EVENT ORGANIZED BY THE PICT ACM STUDENT CHAPTER (PASC). IT COMPRISES MULTIPLE EVENTS IN TECHNICAL AND NON-TECHNICAL DOMAINS, INCLUDING CODING COMPETITIONS, MOCK PLACEMENT INTERVIEWS, BUSINESS MANAGEMENT-BASED EVENTS, DESIGN AND DEVELOPMENT CONTESTS, AND QUIZZING EVENTS." delay={5} /></p>
-                <p><Typewriter text="// LOG_ENTRY_02: IT IS ONE OF THE MOST ANTICIPATED EVENTS AT PICT. THIS YEAR, PULZION IS GOING GLOBAL TO ENCOURAGE STUDENTS OF VARIED BACKGROUNDS TO PARTICIPATE AND COMPETE. WITH SINCERITY, DEDICATION, AND HIGH ASPIRATIONS, OUR CHAPTER HOPES TO ADD VALUE TO OUR COLLEGE AND THE COMMUNITY." delay={5} startDelay={1000} /></p>
+            <div className="grid md:grid-cols-3 gap-8">
+                <div className="md:col-span-1">
+                    <Metadata />
+                </div>
+                <div className="md:col-span-2 space-y-6 text-foreground/90">
+                    <div>
+                        <h3 className='font-bold text-primary tracking-widest mb-2'>[ MISSION OVERVIEW ]</h3>
+                        <p>Pulzion is the annual flagship event organized by the PICT ACM Student Chapter (PASC). It comprises multiple events in technical and non-technical domains, including coding competitions, mock placement interviews, business management-based events, design and development contests, and quizzing events.</p>
+                    </div>
+                     <div>
+                        <h3 className='font-bold text-primary tracking-widest mb-2'>[ STRATEGIC OBJECTIVE ]</h3>
+                        <p>It is one of the most anticipated events at PICT. This year, Pulzion is going global to encourage students of varied backgrounds to participate and compete. With sincerity, dedication, and high aspirations, our chapter hopes to add value to our college and the community.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
