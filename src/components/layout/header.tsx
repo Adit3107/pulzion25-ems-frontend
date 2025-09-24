@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState } from 'react';
@@ -6,13 +5,13 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 
 const navLinks = [
-  { name: 'Home', href: '/' },
-  { name: 'Events', href: '/events' },
-  { name: 'Glimpses', href: '/glimpses' },
-  { name: 'Sponsors', href: '/sponsors' },
+  { name: 'HOME', href: '/' },
+  { name: 'EVENTS', href: '/events' },
+  { name: 'GLIMPSES', href: '/glimpses' },
+  { name: 'SPONSORS', href: '/sponsors' },
 ];
 
 const navVariants = {
@@ -38,7 +37,7 @@ export default function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="sticky top-0 z-50 w-full border-b border-primary/20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      className="sticky top-0 z-50 w-full border-b border-primary/20"
     >
       <div className="container flex h-16 items-center">
         <motion.div
@@ -56,7 +55,7 @@ export default function Header() {
           initial="hidden"
           animate="visible"
           transition={{ delayChildren: 0.3 }}
-          className="hidden md:flex flex-1 items-center justify-center space-x-8 text-sm font-medium"
+          className="hidden md:flex flex-1 items-center justify-center space-x-10 text-base font-medium uppercase tracking-wider"
         >
           {navLinks.map((link) => (
             <motion.div key={link.name} variants={linkVariants}>
@@ -77,7 +76,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Button asChild className="border-primary text-primary-foreground bg-primary hover:bg-primary/90 hover:shadow-[0_0_15px_theme(colors.primary)]">
+            <Button asChild className="border-primary text-primary-foreground bg-primary hover:bg-primary/90 hover:shadow-[0_0_15px_theme(colors.primary)] uppercase">
               <Link href="/login">Login now</Link>
             </Button>
           </motion.div>
@@ -94,7 +93,7 @@ export default function Header() {
                   <div className="flex justify-between items-center p-4 border-b border-primary/20">
                     <h2 className="font-bold font-headline text-lg">NAVIGATION</h2>
                   </div>
-                  <nav className="flex-grow flex flex-col items-center justify-center gap-6 text-lg">
+                  <nav className="flex-grow flex flex-col items-center justify-center gap-8 text-lg uppercase tracking-wider">
                     {navLinks.map((link) => (
                       <SheetClose asChild key={link.name}>
                         <Link
@@ -107,7 +106,7 @@ export default function Header() {
                       </SheetClose>
                     ))}
                     <SheetClose asChild>
-                       <Button asChild className="border-primary text-primary-foreground bg-primary hover:bg-primary/90 hover:shadow-[0_0_15px_theme(colors.primary)] mt-4">
+                       <Button asChild className="border-primary text-primary-foreground bg-primary hover:bg-primary/90 hover:shadow-[0_0_15px_theme(colors.primary)] mt-4 uppercase">
                         <Link href="/login">Login now</Link>
                       </Button>
                     </SheetClose>
