@@ -79,12 +79,12 @@ export function AIGenerator() {
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button className="bg-gradient-to-r from-[hsl(var(--accent))] to-[hsl(var(--accent-secondary))] text-accent-foreground font-bold hover:opacity-90 transition-opacity">
+        <Button className="bg-accent text-accent-foreground font-bold hover:opacity-90 transition-opacity">
           <Wand2 className="mr-2 h-4 w-4" />
           Generate Event Description
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[600px] bg-card">
+      <DialogContent className="sm:max-w-[600px] bg-background">
         <DialogHeader>
           <DialogTitle className="font-headline flex items-center gap-2"><Wand2 /> AI Description Generator</DialogTitle>
           <DialogDescription>

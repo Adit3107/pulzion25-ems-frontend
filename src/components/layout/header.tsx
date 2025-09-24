@@ -40,7 +40,7 @@ export default function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+      className="sticky top-0 z-50 w-full border-b border-white/10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
     >
       <div className="container flex h-16 items-center">
         <motion.div
@@ -79,7 +79,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Button asChild className="bg-gradient-to-r from-purple-500 to-indigo-600 text-primary-foreground font-bold hover:opacity-90 transition-opacity">
+            <Button asChild className="bg-ai-grid text-primary-foreground font-bold hover:opacity-90 transition-opacity">
               <Link href="/register">Register Now</Link>
             </Button>
           </motion.div>
@@ -93,7 +93,7 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[280px] bg-background">
                 <div className="flex flex-col h-full">
-                  <div className="flex justify-between items-center p-4 border-b border-border/40">
+                  <div className="flex justify-between items-center p-4 border-b border-white/10">
                     <h2 className="font-bold font-headline text-lg">Menu</h2>
                   </div>
                   <nav className="flex-grow flex flex-col items-center justify-center gap-6 text-lg">
@@ -109,7 +109,7 @@ export default function Header() {
                       </SheetClose>
                     ))}
                     <SheetClose asChild>
-                       <Button asChild className="bg-gradient-to-r from-purple-500 to-indigo-600 text-primary-foreground font-bold hover:opacity-90 transition-opacity mt-4">
+                       <Button asChild className="bg-ai-grid text-primary-foreground font-bold hover:opacity-90 transition-opacity mt-4">
                         <Link href="/register">Register Now</Link>
                       </Button>
                     </SheetClose>

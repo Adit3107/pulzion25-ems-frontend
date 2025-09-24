@@ -33,7 +33,7 @@ export default function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 text-center">
             {stats.map((stat) => (
-                <div key={stat.label} className="bg-card/50 border border-primary/20 rounded-lg p-6 backdrop-blur-sm">
+                <div key={stat.label} className="bg-background/50 border border-primary/20 rounded-lg p-6 backdrop-blur-sm">
                     <h3 className="text-5xl font-bold text-primary">
                       <Counter value={parseInt(stat.value)} />
                       {stat.label === 'Footfall' ? '+' : ''}
@@ -50,7 +50,7 @@ export default function About() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {organizations.map((org) => (
-                <Card key={org.title} className="bg-card/50 border-primary/20 hover:border-primary/50 transition-all duration-300 group transform hover:-translate-y-2 backdrop-blur-sm overflow-hidden">
+                <Card key={org.title} className="bg-background/50 border-primary/20 hover:border-primary/50 transition-all duration-300 group transform hover:-translate-y-2 backdrop-blur-sm overflow-hidden">
                     <CardHeader>
                         <CardTitle className="font-headline text-2xl text-center group-hover:text-primary transition-colors">{org.title}</CardTitle>
                     </CardHeader>

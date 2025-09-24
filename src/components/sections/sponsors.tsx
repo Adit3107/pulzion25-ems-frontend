@@ -16,8 +16,8 @@ export default function Sponsors() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {sponsors.map((name) => (
             <div key={name} className="relative group">
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
-              <Card className="relative bg-card h-full flex items-center justify-center">
+              <div className="absolute -inset-0.5 bg-ai-grid rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-glow"></div>
+              <Card className="relative bg-background h-full flex items-center justify-center">
                 <CardContent className="p-6">
                   <p className="text-2xl font-bold text-center text-foreground">{name}</p>
                 </CardContent>

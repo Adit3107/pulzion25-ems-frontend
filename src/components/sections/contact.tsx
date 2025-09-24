@@ -46,7 +46,7 @@ export default function Contact() {
         </div>
         
         <div className="grid md:grid-cols-2 gap-12">
-          <Card className="bg-card/50 border-primary/20 backdrop-blur-sm p-6">
+          <Card className="bg-background/50 border-secondary/20 backdrop-blur-sm p-6">
             <CardHeader className="p-0 mb-6">
               <CardTitle className="font-headline text-2xl">Contact Information</CardTitle>
             </CardHeader>
@@ -63,7 +63,7 @@ export default function Contact() {
             </CardContent>
           </Card>
           
-          <Card className="bg-card/50 border-primary/20 backdrop-blur-sm p-6">
+          <Card className="bg-background/50 border-secondary/20 backdrop-blur-sm p-6">
             <CardHeader className="p-0 mb-6">
               <CardTitle className="font-headline text-2xl">Send a Message</CardTitle>
             </CardHeader>
@@ -81,7 +81,7 @@ export default function Contact() {
                   <Label htmlFor="message">Message</Label>
                   <Textarea id="message" placeholder="Your Message" className="bg-background/50" rows={4}/>
                 </div>
-                <Button type="submit" className="w-full bg-gradient-to-r from-primary to-purple-600 text-primary-foreground font-bold hover:opacity-90 transition-opacity">Submit</Button>
+                <Button type="submit" className="w-full bg-ai-grid text-primary-foreground font-bold hover:opacity-90 transition-opacity">Submit</Button>
               </form>
             </CardContent>
           </Card>

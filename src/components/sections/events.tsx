@@ -40,14 +40,14 @@ export default function Events() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          <Card className="flex flex-col bg-card/50 border-primary/20 hover:border-primary/50 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm overflow-hidden">
+          <Card className="flex flex-col bg-background/50 border-primary/20 hover:border-primary/50 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm overflow-hidden">
             <CardHeader>
               <CardTitle className="pt-4 font-headline text-2xl text-center">Technical Events</CardTitle>
             </CardHeader>
             <CardContent className="flex-grow">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
                 {technicalEvents.map((event) => (
-                  <div key={event.name} className="flex flex-col items-center gap-3 p-4 rounded-lg bg-card/30 hover:bg-primary/20 transition-colors duration-300">
+                  <div key={event.name} className="flex flex-col items-center gap-3 p-4 rounded-lg bg-background/30 hover:bg-primary/20 transition-colors duration-300">
                     <EventIcon name={event.icon} className="w-12 h-12 text-primary" />
                     <h4 className="font-semibold">{event.name}</h4>
                   </div>
@@ -56,14 +56,14 @@ export default function Events() {
             </CardContent>
           </Card>
           
-          <Card className="flex flex-col bg-card/50 border-primary/20 hover:border-primary/50 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm overflow-hidden">
+          <Card className="flex flex-col bg-background/50 border-primary/20 hover:border-primary/50 transition-all duration-300 transform hover:scale-105 backdrop-blur-sm overflow-hidden">
             <CardHeader>
               <CardTitle className="pt-4 font-headline text-2xl text-center">Non-Technical Events</CardTitle>
             </CardHeader>
             <CardContent className="flex-grow">
               <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
                 {nonTechnicalEvents.map((event) => (
-                   <div key={event.name} className="flex flex-col items-center gap-3 p-4 rounded-lg bg-card/30 hover:bg-primary/20 transition-colors duration-300">
+                   <div key={event.name} className="flex flex-col items-center gap-3 p-4 rounded-lg bg-background/30 hover:bg-primary/20 transition-colors duration-300">
                     <EventIcon name={event.icon} className="w-12 h-12 text-primary" />
                     <h4 className="font-semibold">{event.name}</h4>
                   </div>

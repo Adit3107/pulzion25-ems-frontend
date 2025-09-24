@@ -22,7 +22,7 @@ export default function LoginPage() {
       </div>
       
       <div className="z-10 w-full max-w-sm">
-        <Card className="bg-card/70 backdrop-blur-lg">
+        <Card className="bg-background/70 backdrop-blur-lg border-secondary/50">
           <CardHeader className="text-center">
             <CardTitle className="font-headline text-3xl flex items-center justify-center gap-2">
               <Gamepad2 /> LOGIN
@@ -38,7 +38,7 @@ export default function LoginPage() {
                 <Label htmlFor="password">Password</Label>
                 <Input id="password" type="password" placeholder="Enter password" required />
               </div>
-              <Button type="submit" className="w-full bg-gradient-to-r from-[hsl(var(--primary))] to-purple-600 text-primary-foreground font-bold hover:opacity-90 transition-opacity">
+              <Button type="submit" className="w-full bg-ai-grid text-primary-foreground font-bold hover:opacity-90 transition-opacity">
                 Login
               </Button>
             </form>

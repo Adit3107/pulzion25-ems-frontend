@@ -23,7 +23,7 @@ export default function RegisterPage() {
       </div>
       
       <div className="z-10 w-full max-w-2xl">
-        <Card className="bg-card/70 backdrop-blur-lg">
+        <Card className="bg-background/70 backdrop-blur-lg border-secondary/50">
           <CardHeader className="text-center">
             <CardTitle className="font-headline text-3xl flex items-center justify-center gap-2">
               <Gamepad2 /> REGISTER
@@ -100,7 +100,7 @@ export default function RegisterPage() {
                 <Label htmlFor="confirm-password">Confirm Password</Label>
                 <Input id="confirm-password" type="password" required />
               </div>
-              <Button type="submit" className="w-full bg-gradient-to-r from-[hsl(var(--primary))] to-purple-600 text-primary-foreground font-bold hover:opacity-90 transition-opacity">
+              <Button type="submit" className="w-full bg-ai-grid text-primary-foreground font-bold hover:opacity-90 transition-opacity">
                 Sign Up
               </Button>
             </form>
