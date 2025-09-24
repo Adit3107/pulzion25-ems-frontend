@@ -97,6 +97,9 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'glitch': 'glitch 0.2s infinite',
       },
+      boxShadow: {
+        'inner-glow': 'inset 0 0 10px 0 hsl(var(--primary) / 0.5)',
+      }
     },
   },
   plugins: [require('tailwindcss-animate')],
