@@ -4,18 +4,15 @@ import About from '@/components/sections/about';
 import Events from '@/components/sections/events';
 import Sponsors from '@/components/sections/sponsors';
 import Contact from '@/components/sections/contact';
-import { AnimatedGridBackground } from '@/components/ui/animated-grid-background';
 import Footer from '@/components/layout/footer';
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen scanlines">
-      <AnimatedGridBackground />
       <Header />
       <main className="flex-grow">
         <Hero />
         <About />
-        <Events />
         <Sponsors />
         <Contact />
       </main>

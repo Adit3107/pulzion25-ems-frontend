@@ -37,7 +37,7 @@ export default function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="sticky top-0 z-50 w-full"
+      className="sticky top-0 z-50 w-full bg-background/70 backdrop-blur-lg border-b border-primary/10"
     >
       <div className="container flex h-16 items-center">
         <motion.div
@@ -76,7 +76,7 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Button asChild variant="default" className="font-bold uppercase bg-primary text-primary-foreground border-2 border-transparent transition-all duration-300 hover:bg-transparent hover:text-primary hover:border-primary hover:shadow-[0_0_15px_theme(colors.primary)]">
+            <Button asChild variant="default" className="font-bold uppercase bg-secondary text-secondary-foreground border-2 border-transparent transition-all duration-300 hover:bg-transparent hover:text-secondary hover:border-secondary hover:shadow-[0_0_15px_theme(colors.secondary)]">
               <Link href="/login">Login now</Link>
             </Button>
           </motion.div>
@@ -106,7 +106,7 @@ export default function Header() {
                       </SheetClose>
                     ))}
                     <SheetClose asChild>
-                       <Button asChild variant="default" className="font-bold uppercase bg-primary text-primary-foreground border-2 border-transparent transition-all duration-300 hover:bg-transparent hover:text-primary hover:border-primary hover:shadow-[0_0_15px_theme(colors.primary)] mt-4">
+                       <Button asChild variant="default" className="font-bold uppercase bg-secondary text-secondary-foreground border-2 border-transparent transition-all duration-300 hover:bg-transparent hover:text-secondary hover:border-secondary hover:shadow-[0_0_15px_theme(colors.secondary)] mt-4">
                         <Link href="/login">Login now</Link>
                       </Button>
                     </SheetClose>
