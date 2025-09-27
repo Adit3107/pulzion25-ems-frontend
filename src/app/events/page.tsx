@@ -1,8 +1,6 @@
 "use client";
 
-import Events from '@/components/sections/events';
 import Header from '@/components/layout/header';
-import Footer from '@/components/layout/footer';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
@@ -21,12 +19,8 @@ export default function EventsPage() {
           data-ai-hint={bgImage.imageHint}
         />
       )}
-      <div className="relative z-10 flex flex-col min-h-screen">
+      <div className="relative z-10">
         <Header />
-        <main className="flex-grow">
-          <Events />
-        </main>
-        <Footer />
       </div>
     </div>
   );
