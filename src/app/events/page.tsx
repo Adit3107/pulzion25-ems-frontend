@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function EventsPage() {
-  const bgImage = PlaceHolderImages.find(img => img.id === 'missionSelectBg');
+  const bgImage = PlaceHolderImages.find(img => img.id === 'gallery8');
 
   return (
     <div className="flex flex-col min-h-screen scanlines">
