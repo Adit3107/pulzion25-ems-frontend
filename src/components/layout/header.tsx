@@ -8,12 +8,12 @@ import { motion } from "framer-motion";
 import { Menu } from "lucide-react";
 
 const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "About", href: "#about" },
-  { name: "Events", href: "#events" },
-  { name: "Glimpses", href: "#glimpses" },
-  { name: "Sponsors", href: "#sponsors" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/#about" },
+  { name: "Events", href: "/events" },
+  { name: "Glimpses", href: "/#glimpses" },
+  { name: "Sponsors", href: "/sponsors" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 const navVariants = {

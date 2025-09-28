@@ -2,7 +2,12 @@
 
 import { useRef, useEffect } from 'react';
 
-export function NetworkBackground() {
+interface NetworkBackgroundProps {
+  className?: string;
+  intensity?: number;
+}
+
+export function NetworkBackground({ className = '', intensity = 80 }: NetworkBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -20,7 +25,7 @@ export function NetworkBackground() {
     });
 
     const particles: { x: number; y: number; vx: number; vy: number }[] = [];
-    const particleCount = 80;
+    const particleCount = intensity;
     const maxDist = 150;
 
     for (let i = 0; i < particleCount; i++) {
@@ -78,6 +83,7 @@ export function NetworkBackground() {
   return (
     <canvas
       ref={canvasRef}
+      className={className}
       style={{
         position: 'fixed',
         top: 0,
