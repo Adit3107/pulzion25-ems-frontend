@@ -10,7 +10,7 @@ export function LiveTimestamp() {
     const date = now.toISOString().split('T')[0];
     const time = now.toTimeString().split(' ')[0];
     setTimestamp(`TIMESTAMP: ${date} // ${time}`);
-  }, []);
+  }, []); // Empty dependency array ensures this runs only on the client
 
   return <p>{timestamp}</p>;
 }
