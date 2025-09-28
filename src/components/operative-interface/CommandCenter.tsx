@@ -1,11 +1,9 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { MissionCard } from './MissionCard';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import Image from 'next/image';
 
 const missions = [
   {
@@ -61,7 +59,6 @@ const missions = [
 export const CommandCenter = () => {
   const [currentMission, setCurrentMission] = useState(0);
   const [glitchActive, setGlitchActive] = useState(false);
-  const bgImage = PlaceHolderImages.find(img => img.id === 'missionSelectBg');
 
   const navigateToMission = (direction: 'prev' | 'next') => {
     setGlitchActive(true);
@@ -78,20 +75,9 @@ export const CommandCenter = () => {
 
   return (
     <div 
-      className="min-h-screen relative overflow-hidden bg-background"
+      className="min-h-screen relative overflow-hidden"
     >
-      {bgImage && (
-        <Image
-          src={bgImage.imageUrl}
-          alt={bgImage.description}
-          fill
-          quality={100}
-          className="absolute inset-0 z-0 object-cover"
-          data-ai-hint={bgImage.imageHint}
-        />
-      )}
-      
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]"></div>
+      <div className="absolute inset-0 bg-transparent backdrop-blur-[1px]"></div>
 
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary/15 rounded-full blur-3xl animate-pulse"></div>
@@ -99,24 +85,12 @@ export const CommandCenter = () => {
         <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-destructive/5 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      <div className="relative z-10 min-h-screen flex flex-col scanlines">
-        <header className="text-center py-8">
-          <h1 className="text-6xl font-black font-headline text-primary mb-4 drop-shadow-[0_0_10px_hsl(var(--primary))]">
-            PULZION '25
-          </h1>
-          <div className="text-2xl font-bold text-secondary mb-2">
-            AI GRIDLOCK OPERATIVE INTERFACE
-          </div>
-          <div className="text-lg text-foreground/80 mb-2">
-            {missions.length} CRITICAL MISSIONS • STATUS: ACTIVE
-          </div>
-          <div className="text-sm text-destructive font-code">
-            ROGUE AI DETECTED • MASTER KEY COMPROMISED • THREAT LEVEL: CRITICAL
-          </div>
-        </header>
+      <div className="relative z-10 min-h-screen flex flex-col items-center justify-center">
+        <div className="text-center space-y-4 mb-12">
+          <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary tracking-widest">[ MISSIONS ]</h2>
+        </div>
 
-        <div className="flex-1 flex items-center justify-center px-8">
-          <div className="w-full max-w-4xl">
+        <div className="w-full max-w-4xl px-8">
             
             <div className="flex justify-between items-center mb-8">
               <Button
@@ -168,16 +142,6 @@ export const CommandCenter = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        <footer className="text-center py-6 text-sm text-foreground/60 font-code">
-          <div className="text-destructive/80">CLASSIFIED: TOP SECRET • AUTHORIZATION LEVEL: OMEGA</div>
-          <div className="mt-2">
-            SYSTEM STATUS: <span className="text-chart-4">COMPROMISED</span> • 
-            CONNECTION: <span className="text-secondary">ENCRYPTED</span> •
-            THREAT LEVEL: <span className="text-destructive">CRITICAL</span>
-          </div>
-        </footer>
       </div>
     </div>
   );
