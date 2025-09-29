@@ -74,7 +74,7 @@ export default function EventsPage() {
         <NetworkBackground />
         <div className="relative z-10 w-full flex flex-col items-center justify-center space-y-12">
             <div className="text-center">
-                <h1 className="text-4xl md:text-6xl font-headline font-bold text-primary tracking-widest">[ SELECT MISSION ]</h1>
+                <h1 className="text-3xl md:text-5xl font-headline font-bold text-primary tracking-widest">[ MISSIONS ]</h1>
             </div>
 
             <div className="w-full max-w-7xl">
