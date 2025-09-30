@@ -7,10 +7,12 @@ import { EventIcon, type IconName } from "./event-icon";
 import { Badge } from "./badge";
 import { Separator } from "./separator";
 import { DollarSign, Globe, Building } from "lucide-react";
+import Link from 'next/link';
 
 interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
   event: {
     name: string;
+    slug: string;
     icon: IconName;
     description: string;
     status: "Locked" | "Unlocked";
@@ -60,10 +62,11 @@ export function EventCard({ event, isActive, className }: EventCardProps) {
             {event.description}
           </p>
           <Button
+            asChild
             disabled={event.status === "Locked"}
             className="w-full font-code tracking-wider bg-primary text-primary-foreground hover:bg-primary/90"
           >
-            View
+            <Link href={`/events/${event.slug}`}>View</Link>
           </Button>
 
           <Separator className="my-4 bg-primary/20" />
