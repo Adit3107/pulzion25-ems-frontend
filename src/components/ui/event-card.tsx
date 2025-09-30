@@ -41,11 +41,13 @@ export function EventCard({ event, isActive, className }: EventCardProps) {
         )}
       >
         <CardHeader>
-          <div className="flex justify-between items-center">
-            <Badge variant="outline" className={cn("font-code", statusStyles[event.status])}>
-              {event.status}
-            </Badge>
-            <div className="text-primary font-code text-sm">#PZN25</div>
+          <div className="flex justify-between items-center h-6">
+            {event.status === 'Locked' && (
+              <Badge variant="outline" className={cn("font-code", statusStyles[event.status])}>
+                {event.status}
+              </Badge>
+            )}
+            <div className="text-primary font-code text-sm ml-auto">#PZN25</div>
           </div>
         </CardHeader>
         <CardContent className="flex flex-col items-center justify-center text-center flex-grow p-6 pt-0">
