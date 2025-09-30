@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { EventCard } from "@/components/ui/event-card";
@@ -35,7 +36,10 @@ const nonTechnicalEvents = [
 ];
 
 const EventCarousel = ({ events }: { events: (typeof technicalEvents | typeof nonTechnicalEvents) }) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "center" },
+    [Autoplay({ delay: 5000, stopOnInteraction: true, stopOnMouseEnter: true })]
+  );
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
 
