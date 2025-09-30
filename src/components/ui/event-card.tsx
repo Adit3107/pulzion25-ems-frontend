@@ -1,10 +1,12 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Card, CardContent, CardHeader, CardTitle } from "./card";
+import { Card, CardContent, CardHeader } from "./card";
 import { Button } from "./button";
 import { EventIcon, type IconName } from "./event-icon";
 import { Badge } from "./badge";
+import { Separator } from "./separator";
+import { DollarSign, Globe, Building } from "lucide-react";
 
 interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
   event: {
@@ -13,18 +15,13 @@ interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
     description: string;
     status: "Locked" | "Unlocked";
     priority: "Critical" | "High" | "Medium" | "Low";
+    mode: "Online" | "Offline";
+    price: string;
   };
   isActive: boolean;
 }
 
 export function EventCard({ event, isActive, className }: EventCardProps) {
-  const priorityStyles = {
-    Critical: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-[0_0_15px_theme(colors.destructive)]",
-    High: "bg-chart-4 text-primary-foreground hover:bg-chart-4/90",
-    Medium: "bg-chart-1 text-primary-foreground hover:bg-chart-1/90",
-    Low: "bg-muted text-muted-foreground hover:bg-muted/90",
-  };
-  
   const statusStyles = {
     Locked: "bg-foreground/20 text-foreground/70 border-foreground/30",
     Unlocked: "bg-primary/20 text-primary border-primary/30",
@@ -63,13 +60,23 @@ export function EventCard({ event, isActive, className }: EventCardProps) {
           </p>
           <Button
             disabled={event.status === "Locked"}
-            className={cn(
-                "w-full font-code tracking-wider", 
-                priorityStyles[event.priority]
-            )}
+            className="w-full font-code tracking-wider bg-primary text-primary-foreground hover:bg-primary/90"
           >
-            PRIORITY: {event.priority.toUpperCase()}
+            View
           </Button>
+
+          <Separator className="my-4 bg-primary/20" />
+
+          <div className="flex justify-around w-full text-sm font-code">
+            <div className="flex items-center gap-2 text-muted-foreground">
+              {event.mode === 'Online' ? <Globe className="w-4 h-4 text-primary" /> : <Building className="w-4 h-4 text-primary" />}
+              <span>{event.mode}</span>
+            </div>
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <DollarSign className="w-4 h-4 text-primary" />
+              <span>{event.price}</span>
+            </div>
+          </div>
         </CardContent>
       </Card>
     </div>

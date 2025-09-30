@@ -12,26 +12,26 @@ import { NetworkBackground } from "@/components/ui/network-background";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const technicalEvents = [
-  { name: 'Codex', icon: 'codex' as IconName, description: "Crack quantum ciphers and extract critical data.", status: "Unlocked", priority: "Critical" },
-  { name: 'Codelicious', icon: 'codelicious' as IconName, description: "Disrupt defensive algorithms in rapid-fire code challenges.", status: "Unlocked", priority: "High" },
-  { name: 'Compute and Compete', icon: 'compute' as IconName, description: "Outmaneuver the AI in direct algorithmic combat.", status: "Unlocked", priority: "Medium" },
-  { name: 'Dataquest', icon: 'dataquest' as IconName, description: "Gather intelligence on the AI's data mining operations.", status: "Locked", priority: "Low" },
-  { name: 'Web n App', icon: 'webapp' as IconName, description: "Penetrate the AI's web and mobile command centers.", status: "Unlocked", priority: "High" },
-  { name: 'Electroquest', icon: 'electroquest' as IconName, description: "Sabotage hardware infrastructure and disable quantum processors.", status: "Locked", priority: "Critical" },
-  { name: 'Hire Hustle', icon: 'hirehustle' as IconName, description: "Recruit new operatives while maintaining cover.", status: "Unlocked", priority: "Medium" },
-  { name: 'Dextrous', icon: 'dextrous' as IconName, description: "Execute precise manual operations on core systems.", status: "Locked", priority: "Low" },
-  { name: 'Paper Presentation', icon: 'paper' as IconName, description: "Present research findings on the AI's weaknesses.", status: "Unlocked", priority: "Medium" },
-  { name: 'Innowave', icon: 'innowave' as IconName, description: "Develop innovative tech to counter adaptive AI.", status: "Unlocked", priority: "High" },
+  { name: 'Codex', icon: 'codex' as IconName, description: "Crack quantum ciphers and extract critical data.", status: "Unlocked", priority: "Critical", mode: "Online", price: "₹100" },
+  { name: 'Codelicious', icon: 'codelicious' as IconName, description: "Disrupt defensive algorithms in rapid-fire code challenges.", status: "Unlocked", priority: "High", mode: "Online", price: "₹100" },
+  { name: 'Compute and Compete', icon: 'compute' as IconName, description: "Outmaneuver the AI in direct algorithmic combat.", status: "Unlocked", priority: "Medium", mode: "Offline", price: "₹150" },
+  { name: 'Dataquest', icon: 'dataquest' as IconName, description: "Gather intelligence on the AI's data mining operations.", status: "Locked", priority: "Low", mode: "Online", price: "₹120" },
+  { name: 'Web n App', icon: 'webapp' as IconName, description: "Penetrate the AI's web and mobile command centers.", status: "Unlocked", priority: "High", mode: "Offline", price: "₹200" },
+  { name: 'Electroquest', icon: 'electroquest' as IconName, description: "Sabotage hardware infrastructure and disable quantum processors.", status: "Locked", priority: "Critical", mode: "Offline", price: "₹250" },
+  { name: 'Hire Hustle', icon: 'hirehustle' as IconName, description: "Recruit new operatives while maintaining cover.", status: "Unlocked", priority: "Medium", mode: "Online", price: "Free" },
+  { name: 'Dextrous', icon: 'dextrous' as IconName, description: "Execute precise manual operations on core systems.", status: "Locked", priority: "Low", mode: "Offline", price: "₹100" },
+  { name: 'Paper Presentation', icon: 'paper' as IconName, description: "Present research findings on the AI's weaknesses.", status: "Unlocked", priority: "Medium", mode: "Online", price: "Free" },
+  { name: 'Innowave', icon: 'innowave' as IconName, description: "Develop innovative tech to counter adaptive AI.", status: "Unlocked", priority: "High", mode: "Offline", price: "₹300" },
 ];
 
 const nonTechnicalEvents = [
-    { name: 'Fandom tmkoc', icon: 'fandom' as IconName, description: "Test your knowledge of the iconic TV show.", status: "Unlocked", priority: "Low" },
-    { name: 'Fandom cricket', icon: 'fandom' as IconName, description: "Show off your expertise in the world of cricket.", status: "Unlocked", priority: "Low" },
-    { name: 'Fandom football', icon: 'fandom' as IconName, description: "Prove you're a true fan of the beautiful game.", status: "Unlocked", priority: "Low" },
-    { name: 'Fandom sitcom', icon: 'fandom' as IconName, description: "Challenge your knowledge of popular sitcoms.", status: "Unlocked", priority: "Low" },
-    { name: 'Fandom anime', icon: 'fandom' as IconName, description: "A battle of wits for all anime enthusiasts.", status: "Unlocked", priority: "Low" },
-    { name: 'Insight', icon: 'insight' as IconName, description: "Gather intelligence through social interaction and wit.", status: "Unlocked", priority: "Medium" },
-    { name: 'Freeze the second', icon: 'freeze' as IconName, description: "Capture time-sensitive intelligence in real-time.", status: "Locked", priority: "High" },
+    { name: 'Fandom tmkoc', icon: 'fandom' as IconName, description: "Test your knowledge of the iconic TV show.", status: "Unlocked", priority: "Low", mode: "Online", price: "₹50" },
+    { name: 'Fandom cricket', icon: 'fandom' as IconName, description: "Show off your expertise in the world of cricket.", status: "Unlocked", priority: "Low", mode: "Online", price: "₹50" },
+    { name: 'Fandom football', icon: 'fandom' as IconName, description: "Prove you're a true fan of the beautiful game.", status: "Unlocked", priority: "Low", mode: "Online", price: "₹50" },
+    { name: 'Fandom sitcom', icon: 'fandom' as IconName, description: "Challenge your knowledge of popular sitcoms.", status: "Unlocked", priority: "Low", mode: "Online", price: "₹50" },
+    { name: 'Fandom anime', icon: 'fandom' as IconName, description: "A battle of wits for all anime enthusiasts.", status: "Unlocked", priority: "Low", mode: "Online", price: "₹50" },
+    { name: 'Insight', icon: 'insight' as IconName, description: "Gather intelligence through social interaction and wit.", status: "Unlocked", priority: "Medium", mode: "Offline", price: "Free" },
+    { name: 'Freeze the second', icon: 'freeze' as IconName, description: "Capture time-sensitive intelligence in real-time.", status: "Locked", priority: "High", mode: "Offline", price: "₹100" },
 ];
 
 const EventCarousel = ({ events }: { events: (typeof technicalEvents | typeof nonTechnicalEvents) }) => {
