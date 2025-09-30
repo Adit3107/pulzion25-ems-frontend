@@ -25,12 +25,16 @@ const technicalEvents = [
 ];
 
 const nonTechnicalEvents = [
-    { name: 'Fandom', icon: 'fandom' as IconName, description: "Infiltrate cultural events to test your trivia knowledge.", status: "Unlocked", priority: "Low" },
+    { name: 'Fandom tmkoc', icon: 'fandom' as IconName, description: "Test your knowledge of the iconic TV show.", status: "Unlocked", priority: "Low" },
+    { name: 'Fandom cricket', icon: 'fandom' as IconName, description: "Show off your expertise in the world of cricket.", status: "Unlocked", priority: "Low" },
+    { name: 'Fandom football', icon: 'fandom' as IconName, description: "Prove you're a true fan of the beautiful game.", status: "Unlocked", priority: "Low" },
+    { name: 'Fandom sitcom', icon: 'fandom' as IconName, description: "Challenge your knowledge of popular sitcoms.", status: "Unlocked", priority: "Low" },
+    { name: 'Fandom anime', icon: 'fandom' as IconName, description: "A battle of wits for all anime enthusiasts.", status: "Unlocked", priority: "Low" },
     { name: 'Insight', icon: 'insight' as IconName, description: "Gather intelligence through social interaction and wit.", status: "Unlocked", priority: "Medium" },
     { name: 'Freeze the second', icon: 'freeze' as IconName, description: "Capture time-sensitive intelligence in real-time.", status: "Locked", priority: "High" },
 ];
 
-const EventCarousel = ({ events }: { events: typeof technicalEvents }) => {
+const EventCarousel = ({ events }: { events: (typeof technicalEvents | typeof nonTechnicalEvents) }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "center" });
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
