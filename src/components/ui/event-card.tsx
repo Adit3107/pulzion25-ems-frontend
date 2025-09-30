@@ -36,8 +36,7 @@ export function EventCard({ event, isActive, className }: EventCardProps) {
       <Card
         className={cn(
           "bg-card/80 backdrop-blur-sm border-2 w-full h-full flex flex-col transition-all duration-300",
-          isActive ? "border-secondary shadow-[0_0_25px_hsl(var(--secondary))]" : "border-primary/20",
-          event.status === "Locked" ? "grayscale" : ""
+          isActive ? "border-secondary shadow-[0_0_25px_hsl(var(--secondary))]" : "border-primary/20"
         )}
       >
         <CardHeader>
