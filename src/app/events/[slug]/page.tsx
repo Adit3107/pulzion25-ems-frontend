@@ -34,9 +34,10 @@ export default function EventDetailPage({ params }: { params: { slug: string } }
         <main className="flex-grow relative overflow-hidden py-16 md:py-24">
             <NetworkBackground />
             <div className="container relative z-10">
+              <div className="bg-card/50 backdrop-blur-sm border border-primary/20 p-8 shadow-[0_0_25px_theme(colors.primary/0.5)]">
                 <div className="grid lg:grid-cols-3 gap-12">
                     {/* Left Column */}
-                    <div className="lg:col-span-1 bg-card/50 backdrop-blur-sm border border-secondary/20 p-8 flex flex-col items-center text-center">
+                    <div className="lg:col-span-1 flex flex-col items-center text-center">
                         <div className="mb-4">
                             <EventIcon name={event.icon as IconName} className="w-24 h-24 text-primary" />
                         </div>
@@ -117,6 +118,7 @@ export default function EventDetailPage({ params }: { params: { slug: string } }
                         </div>
                     </div>
                 </div>
+              </div>
             </div>
         </main>
         <Footer />
