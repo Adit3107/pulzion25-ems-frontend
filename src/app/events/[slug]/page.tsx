@@ -34,7 +34,7 @@ export default function EventDetailPage({ params }: { params: { slug: string } }
         <main className="flex-grow relative overflow-hidden py-16 md:py-24">
             <NetworkBackground />
             <div className="container relative z-10">
-              <div className="bg-card/50 backdrop-blur-sm border border-primary/20 p-8 shadow-[0_0_25px_theme(colors.primary/0.5)]">
+              <div className="bg-card/30 backdrop-blur-md border border-primary/20 p-8 shadow-[0_0_25px_theme(colors.primary/0.5)]">
                 <div className="grid lg:grid-cols-3 gap-12">
                     {/* Left Column */}
                     <div className="lg:col-span-1 flex flex-col items-center text-center">
