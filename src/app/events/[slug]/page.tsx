@@ -1,4 +1,4 @@
-import { technicalEvents, nonTechnicalEvents } from '../page';
+import { technicalEvents, nonTechnicalEvents } from '../data';
 import { EventIcon, type IconName } from '@/components/ui/event-icon';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
