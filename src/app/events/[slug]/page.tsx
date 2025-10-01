@@ -28,6 +28,22 @@ export default function EventDetailPage({ params }: { params: { slug: string } }
     );
   }
 
+  const renderFormattedText = (text: string) => {
+    return text.split('\n').map((line, index) => (
+        <span key={index}>
+            {line}
+            <br />
+        </span>
+    ));
+  };
+  
+  const renderRules = (rules: string) => {
+    return rules.split('\n').map((rule, index) => (
+        <li key={index}>{rule}</li>
+    ));
+  }
+
+
   return (
     <div className="flex flex-col min-h-screen">
         <Header />
@@ -77,7 +93,7 @@ export default function EventDetailPage({ params }: { params: { slug: string } }
                                 <Users className="w-4 h-4 text-primary" />
                                 <div>
                                     <p className="font-semibold text-sm">Team Distribution:</p>
-                                    <p className="text-sm text-muted-foreground">{event.teamDistribution}</p>
+                                    <p className="text-sm text-muted-foreground">{renderFormattedText(event.teamDistribution)}</p>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +105,7 @@ export default function EventDetailPage({ params }: { params: { slug: string } }
                                 <Calendar className="w-4 h-4 text-primary" />
                                 <div>
                                     <p className="font-semibold text-sm">Timeline:</p>
-                                    <p className="text-sm text-muted-foreground">{event.timeline}</p>
+                                    <p className="text-sm text-muted-foreground">{renderFormattedText(event.timeline)}</p>
                                 </div>
                             </div>
                         </div>
@@ -100,15 +116,13 @@ export default function EventDetailPage({ params }: { params: { slug: string } }
                     <div className="lg:col-span-2 space-y-12">
                         <div>
                             <h2 className="text-2xl font-headline text-secondary mb-4">[ Rounds ]</h2>
-                            <p className="text-foreground/80 leading-relaxed">{event.rounds}</p>
+                            <p className="text-foreground/80 leading-relaxed">{renderFormattedText(event.rounds)}</p>
                         </div>
                          <Separator className="bg-border/30" />
                         <div>
                             <h2 className="text-2xl font-headline text-secondary mb-4">[ Rules ]</h2>
                             <ul className="space-y-3 list-decimal list-inside text-foreground/80 leading-relaxed">
-                                {event.rules.map((rule, index) => (
-                                    <li key={index}>{rule}</li>
-                                ))}
+                                {renderRules(event.rules)}
                             </ul>
                         </div>
                          <Separator className="bg-border/30" />
@@ -125,3 +139,5 @@ export default function EventDetailPage({ params }: { params: { slug: string } }
     </div>
   );
 }
+
+    
