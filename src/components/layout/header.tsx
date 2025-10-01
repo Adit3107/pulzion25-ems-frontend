@@ -8,8 +8,8 @@ import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
 
 const navLinks = [
-  { name: 'GRIDLOCK', href: '/gridlock' },
   { name: 'EVENTS', href: '/events' },
+  { name: 'GRIDLOCK', href: '/gridlock' },
   { name: 'GLIMPSES', href: '/glimpses' },
   { name: 'SPONSORS', href: '/sponsors' },
 ];
