@@ -61,10 +61,9 @@ export default function Header() {
             <motion.div key={link.name} variants={linkVariants}>
               <Link
                 href={link.href}
-                className="group relative transition-colors text-foreground hover:text-primary"
+                className="group relative transition-all duration-300 ease-in-out text-foreground hover:text-primary font-bold hover:scale-110 hover:-translate-y-1 block"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300" />
               </Link>
             </motion.div>
           ))}
