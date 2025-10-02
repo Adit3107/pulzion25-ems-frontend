@@ -31,7 +31,7 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <AnimatedSection id="home" className="relative container grid lg:grid-cols-1 gap-10 items-center justify-center min-h-[calc(100vh-10rem)] overflow-hidden">
+    <AnimatedSection id="home" className="relative container grid lg:grid-cols-1 gap-10 items-center justify-center min-h-[calc(100vh-4rem)] overflow-hidden">
       <motion.div 
         variants={containerVariants}
         initial="hidden"
@@ -62,9 +62,6 @@ export default function Hero() {
           </Button>
         </motion.div>
       </motion.div>
-      <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full z-0 opacity-20">
-         {/* Placeholder for a potential future background visual, like a city illustration */}
-      </div>
     </AnimatedSection>
   );
 }

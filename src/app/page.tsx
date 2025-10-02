@@ -10,19 +10,24 @@ import Image from 'next/image';
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen scanlines">
-      <div className="relative">
-         <Image
-            src="https://i.postimg.cc/BZd65Y9g/command-center.jpg"
-            alt="Background"
-            layout="fill"
-            objectFit="cover"
-            className="absolute inset-0 z-0 opacity-30"
-            priority
+      <div className="fixed inset-0 z-[-1]">
+        <Image
+          src="https://i.postimg.cc/BZd65Y9g/command-center.jpg"
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          className="opacity-30"
+          priority
         />
-        <Header />
+        <div className="absolute inset-0 bg-background/50" />
+      </div>
+      
+      <Header />
+      <div className="relative z-10">
         <Hero />
       </div>
-      <main className="flex-grow">
+
+      <main className="flex-grow relative z-10">
         <About />
         <Events />
         <Sponsors />
