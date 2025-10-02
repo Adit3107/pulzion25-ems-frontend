@@ -5,13 +5,13 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { NetworkBackground } from '@/components/ui/network-background';
+import { AnimatedGridBackground } from '@/components/ui/animated-grid-background';
 import { Gamepad2, ArrowLeft } from 'lucide-react';
 
 export default function LoginPage() {
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center bg-background p-4 overflow-hidden">
-      <NetworkBackground />
+      <AnimatedGridBackground />
       <div className="absolute top-4 left-4 z-20">
         <Button asChild variant="ghost" size="icon">
           <Link href="/">

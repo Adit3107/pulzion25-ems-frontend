@@ -5,14 +5,14 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { NetworkBackground } from '@/components/ui/network-background';
+import { AnimatedGridBackground } from '@/components/ui/animated-grid-background';
 import { Gamepad2, ArrowLeft } from 'lucide-react';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 
 export default function RegisterPage() {
   return (
     <div className="relative flex min-h-screen w-full flex-col items-center justify-center bg-background p-4 overflow-hidden">
-      <NetworkBackground />
+      <AnimatedGridBackground />
       <div className="absolute top-4 left-4 z-20">
         <Button asChild variant="ghost" size="icon">
           <Link href="/">
