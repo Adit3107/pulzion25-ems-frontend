@@ -31,7 +31,7 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <AnimatedSection id="home" className="relative container grid lg:grid-cols-1 gap-10 items-center justify-center py-20 md:py-32 min-h-[calc(100vh_-_64px)] overflow-hidden">
+    <AnimatedSection id="home" className="relative container grid lg:grid-cols-1 gap-10 items-center justify-center min-h-screen overflow-hidden">
       <Image
         src="https://i.postimg.cc/BZd65Y9g/command-center.jpg"
         alt="Background"
