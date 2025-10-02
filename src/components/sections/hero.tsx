@@ -40,10 +40,10 @@ export default function Hero() {
       >
         <motion.div variants={itemVariants} className="flex flex-col items-center">
             <Image
-                src="https://i.postimg.cc/7Y1rdXct/Gemini-Generated-Image-gplmjbgplmjbgplm.png"
+                src="https://i.postimg.cc/YSz4S1h5/PULZION-25-LOGO-HERO.png"
                 alt="PULZION 25 LOGO"
-                width={500}
-                height={300}
+                width={800}
+                height={400}
                 className="max-w-full h-auto"
                 priority
             />
