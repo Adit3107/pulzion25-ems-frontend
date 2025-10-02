@@ -3,8 +3,8 @@
 import { Button } from '@/components/ui/button';
 import { AnimatedSection } from '@/components/ui/animated-section';
 import { motion } from 'framer-motion';
-import { GlitchEffect } from '@/components/ui/glitch-effect';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -31,23 +31,31 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <AnimatedSection id="home" className="container grid lg:grid-cols-1 gap-10 items-center justify-center py-20 md:py-32 min-h-[calc(100vh_-_64px)]">
+    <AnimatedSection id="home" className="relative container grid lg:grid-cols-1 gap-10 items-center justify-center py-20 md:py-32 min-h-[calc(100vh_-_64px)] overflow-hidden">
+      <Image
+        src="https://i.postimg.cc/BZd65Y9g/command-center.jpg"
+        alt="Background"
+        layout="fill"
+        objectFit="cover"
+        className="absolute inset-0 z-0 opacity-30"
+        priority
+      />
       <motion.div 
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         className="space-y-8 text-center z-10"
       >
-        <GlitchEffect>
-          <motion.div variants={itemVariants} className="flex flex-col items-center">
-            <h1 className="text-6xl md:text-8xl font-headline font-bold tracking-tighter bg-gradient-to-r from-team-charlie via-team-delta to-team-bravo bg-clip-text text-transparent drop-shadow-[0_0_15px_theme(colors.primary)]">
-              PULZION'25
-            </h1>
-            <h2 className="text-2xl md:text-3xl font-headline font-bold text-foreground tracking-[0.2em]">
-              The Ai Gridlock
-            </h2>
-          </motion.div>
-        </GlitchEffect>
+        <motion.div variants={itemVariants} className="flex flex-col items-center">
+            <Image
+                src="https://i.postimg.cc/yxTFRwQg/PULZION-25-LOGO.png"
+                alt="PULZION 25 LOGO"
+                width={800}
+                height={200}
+                className="max-w-full h-auto"
+                priority
+            />
+        </motion.div>
         
         <motion.p 
             variants={itemVariants}
