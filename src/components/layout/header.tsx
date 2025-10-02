@@ -37,7 +37,7 @@ export default function Header() {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/80 backdrop-blur-lg"
+      className="sticky top-0 z-50 w-full border-b border-border/40"
     >
       <div className="container flex h-16 items-center">
         <motion.div
