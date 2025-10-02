@@ -31,15 +31,7 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <AnimatedSection id="home" className="relative container grid lg:grid-cols-1 gap-10 items-center justify-center min-h-screen overflow-hidden">
-      <Image
-        src="https://i.postimg.cc/BZd65Y9g/command-center.jpg"
-        alt="Background"
-        layout="fill"
-        objectFit="cover"
-        className="absolute inset-0 z-0 opacity-30"
-        priority
-      />
+    <AnimatedSection id="home" className="relative container grid lg:grid-cols-1 gap-10 items-center justify-center min-h-screen overflow-hidden pt-16">
       <motion.div 
         variants={containerVariants}
         initial="hidden"
