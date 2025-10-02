@@ -6,12 +6,12 @@ import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { EventCard } from "@/components/ui/event-card";
-import type { IconName } from "@/components/ui/event-icon";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { NetworkBackground } from "@/components/ui/network-background";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { technicalEvents, nonTechnicalEvents } from "./data";
+import Events from '@/components/sections/events';
 
 
 const EventCarousel = ({ events }: { events: (typeof technicalEvents | typeof nonTechnicalEvents) }) => {
@@ -112,6 +112,7 @@ export default function EventsPage() {
                 </TabsContent>
             </Tabs>
         </div>
+        <Events />
       </main>
       <Footer />
     </div>
