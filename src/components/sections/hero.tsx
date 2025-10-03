@@ -31,12 +31,37 @@ const itemVariants = {
 
 export default function Hero() {
   return (
-    <AnimatedSection id="home" className="container grid lg:grid-cols-1 gap-10 items-center justify-center py-20 md:py-32 min-h-[calc(100vh_-_64px)]">
+    <AnimatedSection 
+      id="home" 
+      className="container grid lg:grid-cols-1 gap-10 items-center justify-center py-20 md:py-32 min-h-screen relative"
+    >
+      {/* Fixed Background Image */}
+      <div className="fixed inset-0 z-0">
+        <img 
+          src="/demo2.png" 
+          alt="Landing Background"
+          className="fixed inset-0 w-screen h-screen object-cover"
+          style={{
+            filter: 'brightness(0.6) contrast(1.2) saturate(1.0)',
+            opacity: 0.8,
+            width: '100vw',
+            height: '100vh',
+            objectPosition: 'center center',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: -1
+          }}
+        />
+        {/* Overlay for better text readability */}
+        <div className="fixed inset-0 bg-gradient-to-t from-black/60 via-black/20 to-black/40" style={{ zIndex: -1 }} />
+      </div>
+      
       <motion.div 
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="space-y-8 text-center z-10"
+        className="space-y-8 text-center z-10 relative"
       >
         <GlitchEffect>
           <motion.div variants={itemVariants} className="flex flex-col items-center">
@@ -62,9 +87,6 @@ export default function Hero() {
           </Button>
         </motion.div>
       </motion.div>
-      <div className="absolute top-0 right-0 w-full lg:w-1/2 h-full z-0 opacity-20">
-         {/* Placeholder for a potential future background visual, like a city illustration */}
-      </div>
     </AnimatedSection>
   );
 }

@@ -10,6 +10,7 @@ import { Menu } from 'lucide-react';
 const navLinks = [
   { name: 'EVENTS', href: '/events' },
   { name: 'GRIDLOCK', href: '/gridlock' },
+  { name: 'LEADERBOARD', href: '/leaderboard' },
   { name: 'GLIMPSES', href: '/glimpses' },
   { name: 'SPONSORS', href: '/sponsors' },
 ];
