@@ -10,70 +10,70 @@
 
 @layer base {
   :root {
-    /* New theme: Purple-based cyberpunk aesthetic */
-    --background: 265 40% 5%; /* Deep dark purple */
-    --foreground: 265 20% 95%; /* Light lavender white */
+    /* Base theme: Dark, cyberpunk aesthetic based on image */
+    --background: 220 40% 5%; /* #05080f - Dark charcoal blue */
+    --foreground: 210 40% 100%; /* #ffffff - Pure white */
 
-    --card: 265 40% 7%; /* Slightly lighter than background */
-    --card-foreground: 265 20% 95%;
+    --card: 220 40% 7%; /* Slightly lighter than background */
+    --card-foreground: 210 40% 100%;
 
-    --popover: 265 40% 5%;
-    --popover-foreground: 265 20% 95%;
+    --popover: 220 40% 5%;
+    --popover-foreground: 210 40% 100%;
 
-    /* Primary color for heroic/player actions - Electric Purple */
-    --primary: 265 89% 65%; /* #8B5CF6 - Vibrant Purple */
-    --primary-foreground: 265 20% 95%;
+    /* Primary color for heroic/player actions - Electric Cyan from image */
+    --primary: 188 100% 45%; /* #00e1f0 - Electric Cyan */
+    --primary-foreground: 220 40% 5%; /* Dark for high contrast */
 
     /* Secondary for general UI highlights */
-    --secondary: 288 85% 60%; /* #D946EF - Fuchsia */
+    --secondary: 265 82% 65%; /* #a855f7 - Brighter Veronica Purple */
     --secondary-foreground: 210 40% 98%;
 
     /* Muted colors for less important elements */
-    --muted: 265 33% 17%;
-    --muted-foreground: 265 20% 65%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    /* Accent color for AI/antagonist elements or special alerts */
-    --accent: 315 84% 60%; /* #F028A8 - Hot Pink/Magenta */
+    /* Accent color for AI/antagonist elements or special alerts - Red from image */
+    --accent: 0 84% 60%; /* #f02849 - Rogue Red/Magenta */
     --accent-foreground: 210 40% 98%;
     
     /* Destructive color - matched to accent for consistency */
-    --destructive: 315 84% 60%; /* #F028A8 */
+    --destructive: 0 84% 60%; /* #f02849 */
     --destructive-foreground: 210 40% 98%;
 
-    --border: 265 33% 17%;
-    --input: 265 33% 17%;
-    --ring: 265 89% 70%; /* Lighter purple for focus rings */
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 188 100% 45%; /* Electric cyan for focus rings */
 
     --radius: 0rem; /* No rounded corners */
     
     /* Team Colors (mapped to chart variables for leaderboards/visuals) */
-    --chart-1: 265 89% 65%;   /* Team Charlie - Vibrant Purple */
-    --chart-2: 288 85% 60%;   /* Team Delta - Fuchsia */
-    --chart-3: 315 84% 60%;   /* Team Echo - Hot Pink/Magenta */
-    --chart-4: 250 80% 70%;   /* Team Bravo - Lighter Indigo */
-    --chart-5: 220 70% 60%;   /* Fallback/General UI - Indigo Blue */
+    --chart-1: 225 70% 50%; /* Team Charlie - Brighter Persian Blue */
+    --chart-2: 265 82% 65%; /* Team Delta - Brighter Veronica */
+    --chart-3: 100 66% 63%; /* Team Echo - SGBUS Green */
+    --chart-4: 48 96% 53%;  /* Team Bravo - Jonquil */
+    --chart-5: 188 100% 45%; /* Fallback/General UI - Electric Cyan */
   }
 
   .dark {
-    --background: 265 40% 5%; /* Deep dark purple */
-    --foreground: 265 20% 95%; /* Light lavender white */
-    --card: 265 40% 7%; /* Slightly lighter than background */
-    --card-foreground: 265 20% 95%;
-    --popover: 265 40% 5%;
-    --popover-foreground: 265 20% 95%;
-    --primary: 265 89% 65%; /* #8B5CF6 - Vibrant Purple */
-    --primary-foreground: 265 20% 95%;
-    --secondary: 288 85% 60%; /* #D946EF - Fuchsia */
+    --background: 220 40% 5%;
+    --foreground: 210 40% 100%;
+    --card: 220 40% 7%;
+    --card-foreground: 210 40% 100%;
+    --popover: 220 40% 5%;
+    --popover-foreground: 210 40% 100%;
+    --primary: 188 100% 45%;
+    --primary-foreground: 220 40% 5%;
+    --secondary: 265 82% 65%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 265 33% 17%;
-    --muted-foreground: 265 20% 65%;
-    --accent: 315 84% 60%; /* #F028A8 - Hot Pink/Magenta */
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 0 84% 60%;
     --accent-foreground: 210 40% 98%;
-    --destructive: 315 84% 60%; /* #F028A8 */
+    --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
-    --border: 265 33% 17%;
-    --input: 265 33% 17%;
-    --ring: 265 89% 70%; /* Lighter purple for focus rings */
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 188 100% 45%;
   }
 }
 
@@ -84,6 +84,9 @@
   body {
     @apply text-foreground;
     background-color: hsl(var(--background));
+    background-image: 
+      radial-gradient(at 0% 0%, hsl(var(--primary) / 0.25) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsl(var(--chart-4) / 0.25) 0px, transparent 50%);
   }
 }
 

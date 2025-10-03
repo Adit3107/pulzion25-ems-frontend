@@ -103,7 +103,7 @@ const EventCarousel = ({ events }: { events: ApiEvent[] }) => {
   )
 }
 
-export default function EventsPage() {
+export default function sPage() {
   const { events, loadEvents } = useEvents();
 
   React.useEffect(() => {
