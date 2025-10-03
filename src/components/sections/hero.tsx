@@ -36,7 +36,7 @@ export default function Hero() {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="space-y-8 text-center z-10"
+        className="space-y-8 text-center z-10 relative"
       >
         <motion.div variants={itemVariants} className="flex flex-col items-center">
             <Image
