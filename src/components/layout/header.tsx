@@ -79,6 +79,16 @@ export default function Header() {
               </Link>
             </motion.div>
           )}
+          {isLoggedIn && (
+            <motion.div key="ORDERS" variants={linkVariants}>
+              <Link
+                href="/orders"
+                className="group relative transition-all duration-300 ease-in-out text-foreground hover:text-primary font-bold hover:scale-110 hover:-translate-y-1 block"
+              >
+                ORDERS
+              </Link>
+            </motion.div>
+          )}
         </motion.nav>
         <div className="flex flex-1 md:flex-initial items-center justify-end space-x-4">
           <motion.div
@@ -130,6 +140,17 @@ export default function Header() {
                           onClick={() => setIsMobileMenuOpen(false)}
                         >
                           MY CARTS
+                        </Link>
+                      </SheetClose>
+                    )}
+                    {isLoggedIn && (
+                      <SheetClose asChild>
+                        <Link
+                          href="/orders"
+                          className="transition-colors hover:text-primary text-foreground"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          ORDERS
                         </Link>
                       </SheetClose>
                     )}

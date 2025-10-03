@@ -4,6 +4,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import api from "@/api/api";
+import { useAuth } from "@/context/AuthContext";
+import type { User } from "@/lib/user";
 
 interface CartItem {
   id: number;
@@ -20,10 +22,13 @@ interface OrderProps {
 
 export default function Order({ cartCombo = [], cartItems = [], refetch }: OrderProps) {
   const router = useRouter();
+  const { user, setUser } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [transactionId, setTransactionId] = useState("");
   const [referal, setReferal] = useState("");
   const [loading, setLoading] = useState(false);
+  const [canChooseHouse, setCanChooseHouse] = useState(false);
+  const [selectedHouseId, setSelectedHouseId] = useState<number | null>(null);
 
   const total = cartItems.reduce((sum, item) => sum + Number(item.price || 0), 0);
   const comboTotal = cartCombo.reduce(
@@ -32,9 +37,27 @@ export default function Order({ cartCombo = [], cartItems = [], refetch }: Order
   );
   const cartTotal = total + comboTotal;
 
-  const handleCheckoutClick = () => {
+  const handleCheckoutClick = async () => {
     setIsModalOpen(true);
     if (typeof document !== "undefined") document.body.style.overflow = "hidden";
+    // Check if we should show houses
+    try {
+      // 1) If user already has a house in AuthContext, do not call endpoint and do not show chooser
+      if (user?.house && (user.house.fk_house !== undefined && user.house.fk_house !== null)) {
+        setSelectedHouseId(null); // ensure we don't send any house_id
+        setCanChooseHouse(false);
+        return;
+      }
+
+      // 2) No existing house_id; now check registrations gate
+      const res = await api.get("/user/no_of_registrations");
+      console.log(res.data);
+      const success = !!(res?.data && (res.data.success === true || res.data.success === "true"));
+      setCanChooseHouse(success);
+    } catch (e) {
+      // If the check fails, do not show houses
+      setCanChooseHouse(false);
+    }
   };
 
   const closeModal = () => {
@@ -60,14 +83,42 @@ export default function Order({ cartCombo = [], cartItems = [], refetch }: Order
         return;
       }
 
+      if (canChooseHouse && (selectedHouseId === null || selectedHouseId === undefined)) {
+        alert("Please select your house before checkout");
+        return;
+      }
+
       const transactionResponse = await api.post("/transaction", {
         event_id: combinedEventIds,
         transaction_id: transactionId,
         referral_code: referal || "0mux2h",
         combo_id: combo_ids || [],
+        // Only include house_id when user has no house in context and a selection was made
+        ...(!user?.house && selectedHouseId != null ? { house_id: selectedHouseId } : {}),
       });
 
       if (transactionResponse.status === 200) {
+        // If we just allocated a house (i.e., chooser was shown and a house was selected), refresh user
+        if (!user?.house && selectedHouseId != null) {
+          try {
+            const me = await api.get("/user/me");
+            const data = me.data as {
+              user: Omit<User, "referral_code" | "count" | "house">;
+              referral_code?: string;
+              count?: number;
+              house?: User["house"];
+            };
+            const mergedUser: User = {
+              ...data.user,
+              referral_code: data.referral_code,
+              count: data.count,
+              house: data.house ?? null,
+            };
+            setUser(mergedUser);
+          } catch (e) {
+            console.error("Failed to refresh user after house selection", e);
+          }
+        }
         await api.delete("/cart");
         alert("Checkout successful!");
         router.push("/orders");
@@ -155,6 +206,24 @@ export default function Order({ cartCombo = [], cartItems = [], refetch }: Order
                   <span>₹</span> {cartTotal}
                 </div>
               </div>
+
+              {canChooseHouse && (
+                <div className="mb-4">
+                  <p className="text-center text-foreground mb-2">Select Your House</p>
+                  <div className="grid grid-cols-2 gap-3">
+                    {[{ id: 1, name: "Delta" }, { id: 2, name: "Charlie" }, { id: 3, name: "Echo" }, { id: 4, name: "Bravo" }].map(h => (
+                      <button
+                        key={h.id}
+                        type="button"
+                        onClick={() => setSelectedHouseId(h.id)}
+                        className={`border rounded-lg py-2 px-3 text-sm ${selectedHouseId === h.id ? "bg-primary text-primary-foreground border-primary" : "bg-background text-foreground border-foreground/20"}`}
+                      >
+                        {h.id}. {h.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               <div className="">
                 <input

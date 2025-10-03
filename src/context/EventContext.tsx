@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useMemo, useState } from "react";
+import React, { createContext, useContext, useMemo, useState, useCallback } from "react";
 import api from "@/api/api";
 
 export type ApiEvent = {
@@ -43,7 +43,7 @@ export const EventContextProvider = ({ children }: { children: React.ReactNode }
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const loadEvents = async () => {
+  const loadEvents = useCallback(async () => {
     if (loading) return;
     try {
       setLoading(true);
@@ -60,8 +60,8 @@ export const EventContextProvider = ({ children }: { children: React.ReactNode }
       const categorized: EventsByCategory = normalizedList.reduce<EventsByCategory>(
         (acc, ev) => {
           const t = normalizeType(ev.type);
-          if (t === "Technical") acc.technical.push(ev);
-          else if (t === "Non-Technical") acc.nontechnical.push(ev);
+          if (t === "technical") acc.technical.push(ev);
+          else if (t === "nontechnical") acc.nontechnical.push(ev);
           else {
             // Fallback: try to infer by keywords
             if (t.includes("non") && t.includes("technical")) acc.nontechnical.push(ev);
@@ -80,9 +80,9 @@ export const EventContextProvider = ({ children }: { children: React.ReactNode }
     } finally {
       setLoading(false);
     }
-  };
+  }, []); // Empty dependency array since it only uses state setters
 
-  const value = useMemo(() => ({ events, loading, error, loadEvents }), [events, loading, error]);
+  const value = useMemo(() => ({ events, loading, error, loadEvents }), [events, loading, error, loadEvents]);
 
   return <EventContext.Provider value={value}>{children}</EventContext.Provider>;
 };

@@ -22,6 +22,7 @@ export const AuthContextProvider = ({ children }: { children: React.ReactNode })
         
       try {
         const res = await api.get("/user/me");
+        console.log(res.data);
         const data = res.data as {
           user: Omit<User, "referral_code" | "count" | "house">;
           referral_code?: string;
