@@ -6,15 +6,34 @@ import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { EventCard } from "@/components/ui/event-card";
-import type { IconName } from "@/components/ui/event-icon";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import { NetworkBackground } from "@/components/ui/network-background";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { technicalEvents, nonTechnicalEvents } from "./data";
+import Events from '@/components/sections/events';
+import { useEvents } from "@/context/EventContext";
+import type { ApiEvent } from "@/context/EventContext";
 
+// Map ApiEvent (from API) to EventCard's expected shape
+const toCardEvent = (e: ApiEvent) => {
+  const slug = e.name
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9\s-]/g, "")
+    .replace(/\s+/g, "-");
+  return {
+    name: e.name,
+    slug,
+    icon: 'codex' as const, // fallback icon; adjust mapping if API provides icon info
+    description: e.description,
+    status: "Unlocked" as const,
+    priority: "Medium" as const,
+    mode: (e.mode as any) ?? 'Online',
+    price: String(e.price ?? "0"),
+  };
+};
 
-const EventCarousel = ({ events }: { events: (typeof technicalEvents | typeof nonTechnicalEvents) }) => {
+const EventCarousel = ({ events }: { events: ApiEvent[] }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, align: "center" },
     [Autoplay({ delay: 5000, stopOnInteraction: true, stopOnMouseEnter: true })]
@@ -85,6 +104,15 @@ const EventCarousel = ({ events }: { events: (typeof technicalEvents | typeof no
 }
 
 export default function EventsPage() {
+  const { events, loadEvents } = useEvents();
+
+  React.useEffect(() => {
+    // Ensure events are loaded if page is opened directly
+    if (events.technical.length === 0 && events.nontechnical.length === 0) {
+      loadEvents();
+    }
+  }, [events.technical.length, events.nontechnical.length, loadEvents]);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -102,16 +130,17 @@ export default function EventsPage() {
                 </TabsList>
                 <TabsContent value="tech" className="w-full mt-8">
                   <div className="flex justify-center">
-                    <EventCarousel events={technicalEvents} />
+                    <EventCarousel events={events.technical} />
                   </div>
                 </TabsContent>
                 <TabsContent value="non-tech" className="w-full mt-8">
                   <div className="flex justify-center">
-                    <EventCarousel events={nonTechnicalEvents} />
+                    <EventCarousel events={events.nontechnical} />
                   </div>
                 </TabsContent>
             </Tabs>
         </div>
+        <Events />
       </main>
       <Footer />
     </div>

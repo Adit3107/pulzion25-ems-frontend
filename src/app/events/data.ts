@@ -3,6 +3,7 @@ import type { IconName } from "@/components/ui/event-icon";
 
 export const technicalEvents = [
   { 
+    id: 1,
     name: 'Codex', 
     slug: 'codex', 
     icon: 'codex' as IconName, 
@@ -19,6 +20,7 @@ export const technicalEvents = [
     contacts: [{ name: "Siddhesh", phone: "8856862577" }, { name: "Tejas", phone: "7058389422" }],
   },
   { 
+    id: 2,
     name: 'Codelicious', 
     slug: 'codelicious', 
     icon: 'codelicious' as IconName, 

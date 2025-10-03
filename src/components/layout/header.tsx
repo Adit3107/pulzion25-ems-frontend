@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import { motion } from 'framer-motion';
-import { Menu } from 'lucide-react';
+import { Menu, User as UserIcon } from 'lucide-react';
+import { useAuth } from '@/context/AuthContext';
 
 const navLinks = [
   { name: 'EVENTS', href: '/events' },
@@ -32,13 +33,14 @@ const linkVariants = {
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { isLoggedIn } = useAuth();
 
   return (
     <motion.header
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="sticky top-0 z-50 w-full"
+      className="sticky top-0 z-50 w-full border-b border-border/40"
     >
       <div className="container flex h-16 items-center">
         <motion.div
@@ -62,13 +64,32 @@ export default function Header() {
             <motion.div key={link.name} variants={linkVariants}>
               <Link
                 href={link.href}
-                className="group relative transition-colors text-foreground hover:text-primary"
+                className="group relative transition-all duration-300 ease-in-out text-foreground hover:text-primary font-bold hover:scale-110 hover:-translate-y-1 block"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300" />
               </Link>
             </motion.div>
           ))}
+          {isLoggedIn && (
+            <motion.div key="MYCARTS" variants={linkVariants}>
+              <Link
+                href="/mycarts"
+                className="group relative transition-all duration-300 ease-in-out text-foreground hover:text-primary font-bold hover:scale-110 hover:-translate-y-1 block"
+              >
+                MY CARTS
+              </Link>
+            </motion.div>
+          )}
+          {isLoggedIn && (
+            <motion.div key="ORDERS" variants={linkVariants}>
+              <Link
+                href="/orders"
+                className="group relative transition-all duration-300 ease-in-out text-foreground hover:text-primary font-bold hover:scale-110 hover:-translate-y-1 block"
+              >
+                ORDERS
+              </Link>
+            </motion.div>
+          )}
         </motion.nav>
         <div className="flex flex-1 md:flex-initial items-center justify-end space-x-4">
           <motion.div
@@ -77,9 +98,15 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <Button asChild variant="default" className="font-bold uppercase bg-secondary text-secondary-foreground border-2 border-transparent transition-all duration-300 hover:bg-transparent hover:text-secondary hover:border-secondary hover:shadow-[0_0_15px_theme(colors.secondary)]">
-              <Link href="/login">Login now</Link>
-            </Button>
+            {isLoggedIn ? (
+              <Link href="/profile" aria-label="Profile" className="inline-flex items-center justify-center rounded-full w-10 h-10 border hover:bg-accent transition-colors">
+                <UserIcon className="h-5 w-5" />
+              </Link>
+            ) : (
+              <Button asChild variant="default" className="font-bold uppercase bg-secondary text-secondary-foreground border-2 border-transparent transition-all duration-300 hover:bg-transparent hover:text-secondary hover:border-secondary hover:shadow-[0_0_15px_theme(colors.secondary)]">
+                <Link href="/login">Login now</Link>
+              </Button>
+            )}
           </motion.div>
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -106,11 +133,45 @@ export default function Header() {
                         </Link>
                       </SheetClose>
                     ))}
-                    <SheetClose asChild>
-                       <Button asChild variant="default" className="font-bold uppercase bg-secondary text-secondary-foreground border-2 border-transparent transition-all duration-300 hover:bg-transparent hover:text-secondary hover:border-secondary hover:shadow-[0_0_15px_theme(colors.secondary)] mt-4">
-                        <Link href="/login">Login now</Link>
-                      </Button>
-                    </SheetClose>
+                    {isLoggedIn && (
+                      <SheetClose asChild>
+                        <Link
+                          href="/mycarts"
+                          className="transition-colors hover:text-primary text-foreground"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          MY CARTS
+                        </Link>
+                      </SheetClose>
+                    )}
+                    {isLoggedIn && (
+                      <SheetClose asChild>
+                        <Link
+                          href="/orders"
+                          className="transition-colors hover:text-primary text-foreground"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          ORDERS
+                        </Link>
+                      </SheetClose>
+                    )}
+                    {isLoggedIn ? (
+                      <SheetClose asChild>
+                        <Link
+                          href="/profile"
+                          className="transition-colors hover:text-primary text-foreground mt-4 flex items-center gap-2"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          <UserIcon className="h-5 w-5" /> Profile
+                        </Link>
+                      </SheetClose>
+                    ) : (
+                      <SheetClose asChild>
+                        <Button asChild variant="default" className="font-bold uppercase bg-secondary text-secondary-foreground border-2 border-transparent transition-all duration-300 hover:bg-transparent hover:text-secondary hover:border-secondary hover:shadow-[0_0_15px_theme(colors.secondary)] mt-4">
+                          <Link href="/login">Login now</Link>
+                        </Button>
+                      </SheetClose>
+                    )}
                   </nav>
                 </div>
               </SheetContent>

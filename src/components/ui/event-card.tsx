@@ -8,18 +8,10 @@ import { Badge } from "./badge";
 import { Separator } from "./separator";
 import { DollarSign, Globe, Building } from "lucide-react";
 import Link from 'next/link';
+import { ApiEvent } from "@/context/EventContext";
 
 interface EventCardProps extends React.HTMLAttributes<HTMLDivElement> {
-  event: {
-    name: string;
-    slug: string;
-    icon: IconName;
-    description: string;
-    status: "Locked" | "Unlocked";
-    priority: "Critical" | "High" | "Medium" | "Low";
-    mode: "Online" | "Offline";
-    price: string;
-  };
+  event: ApiEvent;
   isActive: boolean;
 }
 
@@ -43,9 +35,9 @@ export function EventCard({ event, isActive, className }: EventCardProps) {
       >
         <CardHeader>
           <div className="flex justify-between items-center h-6">
-            {event.status === 'Locked' && (
-              <Badge variant="outline" className={cn("font-code", statusStyles[event.status])}>
-                {event.status}
+            {event.is_active && (
+              <Badge variant="outline" className={cn("font-code", statusStyles[event.is_active ? "Unlocked" : "Locked"])}>
+                {event.is_active}
               </Badge>
             )}
             <div className="text-primary font-code text-sm ml-auto">#PZN25</div>
@@ -53,7 +45,7 @@ export function EventCard({ event, isActive, className }: EventCardProps) {
         </CardHeader>
         <CardContent className="flex flex-col items-center justify-center text-center flex-grow p-6 pt-0">
           <div className="mb-4">
-            <EventIcon name={event.icon} className="w-20 h-20 text-primary/80" />
+            <EventIcon name={event.logo} className="w-20 h-20 text-primary/80" />
           </div>
           <h3 className="font-headline text-2xl font-bold text-foreground mb-2">
             {event.name}
@@ -63,10 +55,10 @@ export function EventCard({ event, isActive, className }: EventCardProps) {
           </p>
           <Button
             asChild
-            disabled={event.status === "Locked"}
+            disabled={!event.is_active}
             className="w-full font-code tracking-wider bg-primary text-primary-foreground hover:bg-primary/90"
           >
-            <Link href={`/events/${event.slug}`}>View</Link>
+            <Link href={`/events/${event.id as unknown as string}`}>View</Link>
           </Button>
 
           <Separator className="my-4 bg-primary/20" />
